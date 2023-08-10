@@ -10,8 +10,8 @@
 
 int main(void)
 {
-char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-int length = strlen(message);
-write(STDERR_FILENO, message, length);
+char *msg = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+int length = strlen(msg);
+write(STDERR_FILENO, msg, length);
 return (1);
 }
