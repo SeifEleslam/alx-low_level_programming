@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -c $CFILE  ${CFILE:0:${#CFILE} - 1}o
