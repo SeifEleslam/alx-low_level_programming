@@ -2,7 +2,7 @@
 
 /*
  *main - Entry point 
- *Description: 'prints the name of the program'
+ *Description: 'prints the size of data types'
  *Return: Always 0 (Success)
  */
 
