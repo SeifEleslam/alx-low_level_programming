@@ -3,14 +3,14 @@
 /**
  * main - Entry point
  * 
- * Description: 'the program's description'
- * @parameter: describe the parameter
+ * Description: 'the program prints a fixed text using puts'
+ * @parameter: no parameters
  * 
- * Retu
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-puts("\"Programming is like building a multilingual puzzle\n");
+puts("\"Programming is like building a multilingual puzzle/n");
 return (0);
 }
