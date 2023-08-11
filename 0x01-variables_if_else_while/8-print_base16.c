@@ -4,7 +4,7 @@
  * Description: 'the program prints a fixed text to the standard error'
  * Return: Always 0 (Success)
  */
-int main()
+int main(void)
 {
 int i;
 
@@ -21,5 +21,5 @@ putchar(i);
 }
 putchar('\n');
 
-return 0;
+ return (0);
 }
