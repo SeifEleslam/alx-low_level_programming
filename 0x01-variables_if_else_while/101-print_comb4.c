@@ -14,8 +14,8 @@ for (i = 48; i <= 57; i++)
 {
 for (ii = 48; ii <= 57; ii++)
 {
-
 for (iii = 48; iii <= 57; iii++)
+{
 if (i < ii & ii < iii)
 {
 putchar(i);
@@ -25,6 +25,7 @@ if (i != 55 || ii != 56 || iii != 57)
 {
 putchar(',');
 putchar(' ');
+}
 }
 }
 }
