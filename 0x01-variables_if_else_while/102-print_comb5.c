@@ -19,7 +19,7 @@ for (i2 = 48; i2 <= 57; i2++)
 {
 for (ii2 = 48; ii2 <= 57; ii2++)
 {
-if ((i1 = i2 && ii1 < ii2) || i1 < i2)
+if ((i1 == i2 && ii1 < ii2) || i1 < i2)
 {
 putchar(i1);
 putchar(ii1);
