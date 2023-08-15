@@ -6,10 +6,12 @@
  */
 int main(void)
 {
+    int i = 0;
     char *string = "_putchar";
-    for (int i = 0; i < strlen(string); i++)
+    while (i < (int)strlen(string))
     {
         _putchar(string[i]);
+        i++;
     }
     _putchar('\n');
 
