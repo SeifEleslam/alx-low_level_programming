@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "mian.h"
 /**
  * main - Entry point
  * Description: 'the program prints a fixed text to the standard error'
@@ -7,12 +7,11 @@
 int main(void)
 {
     char *string = "_putchar";
-    int stirng_len = strlen(string);
-    for (int i = 0; i < string_len; i++)
+    for (int i = 0; i < strlen(string); i++)
     {
-        putchar(string[i]);
+        _putchar(string[i]);
     }
-    putchar('\n');
+    _putchar('\n');
 
     return (0);
 }
