@@ -8,7 +8,9 @@ int main(void)
 {
 	int i = 0;
 	char *string = "_putchar";
-	while (i < (int)strlen(string)){
+	
+	while (i < (int)strlen(string))
+	{
 		_putchar(string[i]);
 		i++;
 	}
