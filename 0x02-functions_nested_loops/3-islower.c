@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _islower - returns 1 if c is lowercase, else it returns 0
  * @c: int to be tested
