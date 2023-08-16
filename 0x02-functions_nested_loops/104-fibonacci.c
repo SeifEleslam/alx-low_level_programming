@@ -37,6 +37,8 @@ void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o
 {
 	unsigned long tmp, tmp0;
 	unsigned long mx = 100000000;
+	int i;
+	
 	if (f1 == 1 && f2 == 1 && limit > 1)
 	{
 		printf("%lu, ", f1);
@@ -48,7 +50,7 @@ void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o
 		tmp = (f2 + f1) % mx;
 		tmp0 = f1o + f2o + (f1 + f2) / mx;
 		printf("%lu", tmp0);
-		int i = num_len(mx) - 1 - num_len(tmp);
+		i = num_len(mx) - 1 - num_len(tmp);
 		while (i > 0 && tmp0 > 0)
 		{
 			printf("0");
@@ -68,7 +70,7 @@ void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o
 
 		if (tmp)
 		{
-			int i = num_len(mx) - 1 - num_len(tmp);
+			i = num_len(mx) - 1 - num_len(tmp);
 			while (i > 0 && tmp0 > 0)
 			{
 				printf("0");
