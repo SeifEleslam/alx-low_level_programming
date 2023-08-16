@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _isalpha - returns 1 if c is positive, -1 if negative, and 0 if 0
+ * print_sign - returns 1 if c is positive, -1 if negative, and 0 if 0
  * @c: integer to be tested
  * Return: 1 or 0 or -1
  */
