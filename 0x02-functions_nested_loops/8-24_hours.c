@@ -4,7 +4,7 @@
  * jack_bauer - prints a 24 hours minute by minute 
  */
 
-void jack_bauer(voud)
+void jack_bauer(void)
 {
 	int h, m;
 
