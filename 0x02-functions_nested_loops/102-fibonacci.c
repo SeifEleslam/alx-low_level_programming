@@ -1,10 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
-
 /**
- * fb - prints first n numbers of fibonacci seq
- * Return: void
+ * fb - prints first limit  numbers of the fibonacci sequence
+ * @f1: the num berfore previous number
+ * @f2: the previous number
+ * @limit: the limit for this fb function 
+ * Return: 0
  */
 
 void fb(long f1, long f2, int limit)
@@ -26,14 +28,13 @@ void fb(long f1, long f2, int limit)
 	}
 }
 
-
 /**
  * main - prints first 50 numbers of the fibonacci sequence
  * Return: 0
  */
 int main(void)
 {
-	fb(1, 1, 50);
+	fb(1, 1, 100);
 	printf("\n");
 	return (0);
 }
