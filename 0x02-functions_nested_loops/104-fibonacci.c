@@ -34,7 +34,7 @@ void fb(unsigned long f1, unsigned long f2, int limit)
  */
 int main(void)
 {
-	fb(1, 1, 100);
+	fb(1, 1, 98);
 	printf("\n");
 	return (0);
 }
