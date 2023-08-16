@@ -35,12 +35,12 @@ int num_len(unsigned long num)
  * Return: void
  */
 
-void fb
-(
- unsigned long f1, 
- unsigned long f1o, 
- unsigned long f2, 
- unsigned long f2o, int limit
+void fb(
+unsigned long f1,
+unsigned long f1o,
+unsigned long f2,
+unsigned long f2o,
+int limit
 )
 {
 	unsigned long tmp, tmp0;
@@ -73,7 +73,7 @@ void fb
 			}
 			printf("%lu", tmp);
 		}
-		if(limit != 1)
+		if (limit != 1)
 		{
 			printf(", ");
 			fb(f2, f2o, (f1 + f2) % mx, f1o + f2o + (f1 + f2) / mx, limit - 1);
