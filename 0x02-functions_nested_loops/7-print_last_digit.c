@@ -1,5 +1,5 @@
 #include "main.h"
-#include "6-abs.h"
+#include "6-abs.c"
 
 /**
  * print_last_digit - pritns the last digit of n
