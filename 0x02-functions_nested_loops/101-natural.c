@@ -10,23 +10,23 @@
 
 void putchar_n(int num)
 {
-        int tmp2;
+	int tmp2;
 
-        if (num == 0)
-                _putchar(48);
-        else
-        {
-                if (num / 10 > 0)
-                {
-                        tmp2 = num / 10;
-                        putchar_n(tmp2);
-                        _putchar(num % 10 + 48);
-                }
-                else if (num / 10 == 0)
-                {
-                        _putchar(num + 48);
-                }
-        }
+	if (num == 0)
+		_putchar(48);
+	else
+	{
+		if (num / 10 > 0)
+		{
+			tmp2 = num / 10;
+			putchar_n(tmp2);
+			_putchar(num % 10 + 48);
+		}
+		else if (num / 10 == 0)
+		{
+			_putchar(num + 48);
+		}
+	}
 }
 
 /**
