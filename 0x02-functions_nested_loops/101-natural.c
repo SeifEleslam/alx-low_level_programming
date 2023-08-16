@@ -30,14 +30,14 @@ void putchar_n(int num)
 }
 
 /**
- * sump - returns the sum of numbers from start to end with step steps
+ * sp - returns the sum of numbers from start to end with step steps
  * @start: kick off point
  * @end: end
  * @step: step
  * Return: sum
  */
 
-int sump(int start, int end, int step)
+int sp(int start, int end, int step)
 {
 	int sum = 0, i = start;
 
@@ -56,7 +56,7 @@ int sump(int start, int end, int step)
  */
 int main(void)
 {
-	putchar_n(sump(3, 1024, 3) + sump(5, 1024, 5) - sump(15, 1024, 15));
+	putchar_n(sp(3, 1024, 3) + sp(5, 1024, 5) - sp(15, 1024, 15));
 	_putchar('\n');
 	return (0);
 }
