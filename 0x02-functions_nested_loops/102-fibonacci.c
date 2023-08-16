@@ -5,7 +5,7 @@
  * fb - prints first limit  numbers of the fibonacci sequence
  * @f1: the num berfore previous number
  * @f2: the previous number
- * @limit: the limit for this fb function 
+ * @limit: the limit for this fb function
  * Return: 0
  */
 
@@ -34,7 +34,7 @@ void fb(long f1, long f2, int limit)
  */
 int main(void)
 {
-	fb(1, 1, 100);
+	fb(1, 1, 50);
 	printf("\n");
 	return (0);
 }
