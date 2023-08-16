@@ -30,13 +30,14 @@ void putchar_n(int num)
 }
 
 /**
- * sumr - returns the sum of numbers from start to end with step steps
+ * sum_step - returns the sum of numbers from start to end with step steps
  * @start: the first number
  * @end: the last number
- *@step:the number of  steps
+ * @step: the value of steps
  * Return: sum
  */
-int sumr(int start, int end, int step)
+
+int sum_step(int start, int end, int step)
 {
 	int sum = 0, i;
 
@@ -54,8 +55,7 @@ int sumr(int start, int end, int step)
  */
 int main(void)
 {
-
-	putchar_n(sumr(3, 1024, 3) + sumr(5, 1024, 5) - sumr(15, 1024, 15));
+	putchar_n(sum_step(3, 1024, 3) + sum_step(5, 1024, 5) - sum_step(15, 1024, 15));
 	_putchar('\n');
 	return (0);
 }
