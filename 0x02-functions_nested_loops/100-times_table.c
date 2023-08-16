@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *putnchar - Print a number of any any digit
+ *putchar_n - Print a number of any any digit
  *@num : takes an input number
  *
  *
