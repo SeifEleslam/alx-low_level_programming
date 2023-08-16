@@ -44,7 +44,7 @@ int sp(int start, int end, int step)
 	while (i < end)
 	{
 		sum += i;
-		i += step
+		i += step;
 	}
 	return (sum);
 
