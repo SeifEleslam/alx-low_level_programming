@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * jack_bauer - prints a 24 hours minute by minute 
+ * jack_bauer - prints a 24 hours minute by minute
  */
 
 void jack_bauer(void)
@@ -16,7 +16,7 @@ void jack_bauer(void)
 			_putchar(h % 10 + 48);
 			_putchar(':');
 			_putchar(m / 10 + 48);
-			_putchar(h % 10 + 48);
+			_putchar(m % 10 + 48);
 			_putchar('\n');
 		}
 	}
