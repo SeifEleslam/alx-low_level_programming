@@ -21,7 +21,7 @@ int num_len(unsigned long num)
 		num = num / 10;
 		length += 1;
 	}
-	
+
 	return (length);
 }
 
@@ -35,7 +35,13 @@ int num_len(unsigned long num)
  * Return: void
  */
 
-void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o, int limit)
+void fb
+(
+ unsigned long f1, 
+ unsigned long f1o, 
+ unsigned long f2, 
+ unsigned long f2o, int limit
+)
 {
 	unsigned long tmp, tmp0;
 	unsigned long mx = 100000000;
@@ -57,7 +63,7 @@ void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o
 			printf("%lu", tmp0);
 		}
 
-		if (tmp)
+		if (tmp > 0)
 		{
 			i = num_len(mx) - 1 - num_len(tmp);
 			while (i > 0 && tmp0 > 0)
@@ -68,8 +74,10 @@ void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o
 			printf("%lu", tmp);
 		}
 		if(limit != 1)
+		{
 			printf(", ");
-		fb(f2, f2o, (f1 + f2) % mx, f1o + f2o + (f1 + f2) / mx, limit - 1);
+			fb(f2, f2o, (f1 + f2) % mx, f1o + f2o + (f1 + f2) / mx, limit - 1);
+		}
 	}
 }
 
