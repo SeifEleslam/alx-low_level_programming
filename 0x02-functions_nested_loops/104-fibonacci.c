@@ -2,6 +2,30 @@
 #include <stdio.h>
 
 /**
+ * num_len - return the length of unsigned long num
+ * @num: the number to return its length
+ * Returns: the length of num
+ */
+
+int num_len(unsigned long num)
+{
+	int length = 0;
+
+	if (!num)
+	{
+		return (1);
+	}
+
+	while (num)
+	{
+		num = num / 10;
+		length += 1;
+	}
+	
+	return (length);
+}
+
+/**
  * fb - prints first limit  numbers of the fibonacci sequence
  * @f1: the num berfore previous number
  * @f2: the previous number
@@ -9,22 +33,51 @@
  * Return: 0
  */
 
-void fb(unsigned long f1, unsigned long f2, int limit)
+void fb(unsigned long f1, unsigned long f1o, unsigned long f2, unsigned long f2o, int limit)
 {
+	unsigned long tmp, tmp0;
+	unsigned long mx = 100000000;
 	if (f1 == 1 && f2 == 1 && limit > 1)
 	{
 		printf("%lu, ", f1);
 		printf("%lu, ", f2 + f1);
-		fb(1, 2, limit - 2);
+		fb(1, 0, 2, 0, limit - 2);
 	}
 	else if (limit == 1)
 	{
-		printf("%lu", f1 + f2);
+		tmp = (f2 + f1) % mx;
+		tmp0 = f1o + f2o + (f1 + f2) / mx;
+		printf("%lu", tmp0);
+		int i = num_len(mx) - 1 - num_len(tmp);
+		while (i > 0 && tmp0 > 0)
+		{
+			printf("0");
+			i--;
+		}
+		printf("%lu", tmp);
 	}
 	else
 	{
-		printf("%lu, ", f2 + f1);
-		fb(f2, f1 + f2, limit - 1);
+		tmp = (f2 + f1) % mx;
+		tmp0 = f1o + f2o + (f1 + f2) / mx;
+		
+		if (tmp0 > 0)
+		{
+			printf("%lu", tmp0);
+		}
+
+		if (tmp)
+		{
+			int i = num_len(mx) - 1 - num_len(tmp);
+			while (i > 0 && tmp0 > 0)
+			{
+				printf("0");
+				i--;
+			}
+			printf("%lu", tmp);
+		}
+		printf(", ");
+		fb(f2, f2o, (f1 + f2) % mx, f1o + f2o + (f1 + f2) / mx, limit - 1);
 	}
 }
 
@@ -34,7 +87,7 @@ void fb(unsigned long f1, unsigned long f2, int limit)
  */
 int main(void)
 {
-	fb(1, 1, 98);
+	fb(1, 0, 1, 0, 98);
 	printf("\n");
 	return (0);
 }
