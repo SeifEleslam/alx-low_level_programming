@@ -30,32 +30,33 @@ void putchar_n(int num)
 }
 
 /**
- * sum_step - returns the sum of numbers from start to end with step steps
- * @start: the first number
- * @end: the last number
- * @step: the value of steps
+ * sump - returns the sum of numbers from start to end with step steps
+ * @start: kick off point
+ * @end: end
+ * @step: step
  * Return: sum
  */
 
-int sum_step(int start, int end, int step)
+int sump(int start, int end, int step)
 {
-	int sum = 0, i;
+	int sum = 0, i = start;
 
-	for (i = start; i < end; i += step)
+	while (i < end)
 	{
 		sum += i;
+		i += step
 	}
 	return (sum);
 
 }
 /**
- * main - prints the sum of all numbers under 1024
+ * main - prints the sum of numbers below 1024
  * that are divisible by 3 or 5
  * Return: 0
  */
 int main(void)
 {
-	putchar_n(sum_step(3, 1024, 3) + sum_step(5, 1024, 5) - sum_step(15, 1024, 15));
+	putchar_n(sump(3, 1024, 3) + sump(5, 1024, 5) - sump(15, 1024, 15));
 	_putchar('\n');
 	return (0);
 }
