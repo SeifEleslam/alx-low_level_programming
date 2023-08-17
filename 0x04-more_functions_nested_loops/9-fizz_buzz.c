@@ -6,7 +6,7 @@
  * Return: 0 Always.
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 
