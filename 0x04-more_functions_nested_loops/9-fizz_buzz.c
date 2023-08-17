@@ -2,7 +2,7 @@
 
 /**
  * main - print Fuzz Buzz.
- * Return: 0 Always.
+ * Return: 1 Always.
  */
 
 int main(void)
@@ -26,6 +26,6 @@ int main(void)
 	}
 	printf("\n");
 
-	return (0);
+	return (1);
 }
 
