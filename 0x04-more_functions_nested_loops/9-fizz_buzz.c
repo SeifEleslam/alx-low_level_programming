@@ -3,10 +3,10 @@
 
 /**
  * main - print Fuzz Buzz.
- * Return: 0 Always
+ *
  */
 
-int main(void)
+void main(void)
 {
 	int i;
 
@@ -26,7 +26,5 @@ int main(void)
 		printf(" ");
 	}
 	printf("\n");
-
-	return (0);
 }
 
