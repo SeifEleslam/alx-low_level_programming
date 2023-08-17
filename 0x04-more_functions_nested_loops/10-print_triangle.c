@@ -5,7 +5,7 @@
  * @size: the len of a line in square
  */
 
-void print_square(int size)
+void print_triangle(int size)
 {
 	int i, l;
 
