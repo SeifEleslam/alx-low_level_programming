@@ -2,7 +2,7 @@
 
 /**
  * _isupper - check if c is uppercase letter or not.
- * @c: letter to be checked
+ * @c: letter as int to be checked
  * Return: 1 if c is uppercase 0 if not.
  */
 
