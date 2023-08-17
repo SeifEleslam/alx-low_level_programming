@@ -5,7 +5,7 @@
  * @n: the len of diagonal line
  */
 
-void more_numbers(int n)
+void print_diagonal(int n)
 {
 	int i, l;
 
