@@ -1,22 +1,27 @@
 #include <stdio.h>
 
 /**
- * main - prints the highest prime factor of 612852475143
- *
- * Return: 0 if successful
+ * main - check the code
+ * Return: Always 0.
  */
+
 int main(void)
 {
-	unsigned long int prime = 612852475143;
-	unsigned long int i = 3;
+	unsigned long int i, num, output;
 
-	while (i <= prime / 2)
-		if (prime % i == 0)
-			prime = prime / i;
-		else
-			i += 2;
-
-	printf("%ld\n", prime);
+	num = 612852475143;
+	for (i = 0; i < (num / 1000000); i++)
+	{
+		if (num % i == 0)
+		{
+			output = i;
+			while (num % i == 0)
+				num /= i;
+		}
+	}
+	if (num > output)
+		output = num;
+	printf("%ld\n", output);
 
 	return (0);
 }
