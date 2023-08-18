@@ -23,7 +23,7 @@ int main(void)
 	}
 	if (num > output)
 		output = num;
-	printf("%d\n", output);
+	printf("%li\n", output);
 
 	return (0);
 }
