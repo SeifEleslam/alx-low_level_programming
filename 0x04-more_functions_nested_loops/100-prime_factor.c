@@ -10,7 +10,7 @@ int main(void)
 	unsigned long int i, num, output;
 
 	num = 612852475143;
-	for (i = 0; i < (num / 1000000); i++)
+	for (i = 2; i < (num / 1000000); i++)
 	{
 		if (num % i == 0)
 		{
