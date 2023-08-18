@@ -9,10 +9,10 @@
 
 int main(void)
 {
-	long i, num, output;
+	unsigned long int i, num, output;
 
 	num = 612852475143;
-	for (i = 0; i < num / 1000000; i++)
+	for (i = 0; i < (num / 1000000); i++)
 	{
 		if (num % i == 0)
 		{
@@ -23,7 +23,7 @@ int main(void)
 	}
 	if (num > output)
 		output = num;
-	printf("%li\n", output);
+	printf("%ld\n", output);
 
 	return (0);
 }
