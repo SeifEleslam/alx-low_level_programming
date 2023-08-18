@@ -11,23 +11,27 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		n = -n;
+		tmp = -n;
 		_putchar('-');
 	}
+	else
+	{
+		tmp = n;
+	}
 
-	if (n == 0)
+	if (tmp == 0)
 		_putchar(48);
 	else
 	{
-		if (n / 10 > 0)
+		if (tmp / 10 > 0)
 		{
-			tmp = n / 10;
+			tmp = tmp / 10;
 			print_number(tmp);
-			_putchar(n % 10 + 48);
+			_putchar(tmp % 10 + 48);
 		}
 		else if (n % 10 > 0)
 		{
-			_putchar(n + 48);
+			_putchar(tmp + 48);
 		}
 	}
 }
