@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <math.h>
 
 /**
  * main - check the code
@@ -8,10 +9,10 @@
 
 int main(void)
 {
-	unsigned long i, num, output;
+	long i, num, output;
 
 	num = 612852475143;
-	for(i = 0; i < num / 1000000; i++)
+	for(i = 0; i < sqrt(num) + 1; i++)
 	{
 		if (num % i == 0)
 		{
@@ -22,7 +23,7 @@ int main(void)
 	}
 	if (num > output)
 		output = num;
-	printf("%lu\n", output);		
+	printf("%lu\n", output);
 
 	return (0);
 }
