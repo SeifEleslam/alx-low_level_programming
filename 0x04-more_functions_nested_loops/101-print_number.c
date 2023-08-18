@@ -9,6 +9,12 @@ void print_number(int n)
 {
 	int tmp2;
 
+	if (n < 0)
+	{
+		n = -n;
+		_putchar('-');
+	}
+
 	if (n == 0)
 		_putchar(48);
 	else
