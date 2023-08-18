@@ -21,9 +21,9 @@ int main(void)
 				num /= i;
 		}
 	}
-/*	if (num > output)
- *		output = num;
- */	printf("%lu\n", output);
+	if (num > output)
+		output = num;
+	printf("%d\n", output);
 
 	return (0);
 }
