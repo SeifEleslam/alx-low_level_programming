@@ -26,6 +26,6 @@ void print_number(int n)
 		if (i <= u || i == 1)
 			_putchar(u / i % 10 + '0');
 		i /= 10;
-	} while (u % 10 > 0);
+	} while (u / 10 > 0);
 }
 
