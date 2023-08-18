@@ -12,7 +12,7 @@ int main(void)
 	long i, num, output;
 
 	num = 612852475143;
-	for(i = 0; i < sqrt(num) + 1; i++)
+	for (i = 0; i < sqrt(num) + 1; i++)
 	{
 		if (num % i == 0)
 		{
@@ -21,8 +21,8 @@ int main(void)
 				num /= i;
 		}
 	}
-	if (num > output)
-		output = num;
+//	if (num > output)
+//		output = num;
 	printf("%lu\n", output);
 
 	return (0);
