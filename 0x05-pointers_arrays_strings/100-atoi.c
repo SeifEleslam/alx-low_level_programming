@@ -7,7 +7,6 @@
 int _atoi(char *s)
 {
 	int i, result, l;
-	char *num
 
 	i = 0;
 	l = -1;
@@ -16,8 +15,8 @@ int _atoi(char *s)
 		if (s[i] >= 48 && s[i] < 58)
 		{
 			if (l == -1)
-				l = i
-			result = (l - i) * 10 + s[i]
+				l = i;
+			result = (l - i) * 10 + s[i];
 		}
 		else
 		{
