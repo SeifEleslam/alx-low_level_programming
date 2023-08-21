@@ -15,7 +15,7 @@ void print_array(int *a, int n)
 		if (a[i] != '\0')
 		{
 			if (i != 0)
-				printf(", ")
+				printf(", ");
 			printf("%i", a[i]);
 		}
 		else
