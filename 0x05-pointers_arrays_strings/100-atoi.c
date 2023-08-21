@@ -6,7 +6,8 @@
 
 int _atoi(char *s)
 {
-	int i, l, result, sign;
+	int i, l, sign;
+	unsigned int result;
 
 	result = 0;
 	sign = 0;
@@ -14,7 +15,7 @@ int _atoi(char *s)
 	l = -1;
 	while (s[i] != '\0')
 	{
-		if(l == -1 && s[i] == 0)
+		if(l == -1 && s[i] == '-')
 			sign++;
 		if (s[i] >= 48 && s[i] < 58)
 		{
