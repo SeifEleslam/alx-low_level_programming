@@ -16,7 +16,7 @@ int _atoi(char *s)
 		{
 			if (l == -1)
 				l = i;
-			result = (l - i) * 10 + s[i];
+			result = (l - i) * 10 + (s[i] - 48);
 		}
 		else
 		{
