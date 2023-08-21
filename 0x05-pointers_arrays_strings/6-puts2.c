@@ -10,7 +10,7 @@ void puts2(char *str)
 {
 	int i, len;
 
-	len = strlen(s);
+	len = strlen(str);
 	for (i = 0; i < len; i+=2)
 		printf("%c", s[i]);
 	printf("\n");
