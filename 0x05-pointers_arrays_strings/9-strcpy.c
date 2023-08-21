@@ -1,6 +1,7 @@
 /**
  *_strcpy - return pointer to the string
- *@s : the first address of the string
+ *@src: the address of provided string
+ *@dest: the destination to put the copy on
  *Return: address of the copy of the string
  */
 
