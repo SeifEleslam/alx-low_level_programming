@@ -16,7 +16,7 @@ int string_includes(char *arr, char val)
 
 char *cap_string(char *str)
 {
-	int i, tmp;
+	int i;
 	char sperators;
 	
 	sperators[] = " \t,;.!?\"(){}\n";
