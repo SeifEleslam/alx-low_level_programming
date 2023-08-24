@@ -1,7 +1,9 @@
+
 /**
- *string_toupper - concatenates two strings
- *@str : the first address of the string
- *Return : new string
+ *string_includes - concatenates two strings
+ *@arr : the first address of the string
+ *@val : sdads
+ *Return: new string
  */
 
 int string_includes(char *arr, char val)
@@ -14,11 +16,19 @@ int string_includes(char *arr, char val)
 	return (0);
 }
 
+
+/**
+ *cap_string - concatenates two strings
+ *@str : the first address of the string
+ *Return: new string
+ */
+
 char *cap_string(char *str)
 {
 	int i;
-	char sperators[]= " \t,;.!?\"(){}\n";
+	char sperators[13];
 
+	sperators = " \t,;.!?\"(){}\n";
 	i = 0;
 	while (str[i] != '\0')
 	{
