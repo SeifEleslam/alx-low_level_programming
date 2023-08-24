@@ -1,7 +1,7 @@
 /**
  *string_toupper - concatenates two strings
  *@str : the first address of the string
- *Return : new string
+ *Return: new string
  */
 
 char *string_toupper(char *str)
