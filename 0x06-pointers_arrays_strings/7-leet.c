@@ -1,44 +1,24 @@
 /**
- *leet - concatenates two strings
- *@str : the first address of the string
- *Return : new string
+ * leet - encode string to 1337
+ * @s: string to encode
+ * Return: pointer to encoded string
  */
-
-char *leet(char *str)
+char *leet(char *s)
 {
-	int i;
+	char *r = s;
+	char a[] = { 'a', 'e', 'o', 't', 'l' };
+	char n[] = { 4, 3, 0, 7, 1 };
+	int i = 0;
 
-	i = 0;
-	while (str[i] != '\0')
+	while (*s)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		for (i = 0; i < 5; i++)
 		{
-			str[i] = '4';
-			i++;
-			continue;
+			if (*s == a[i] || *s == a[i] - 32)
+				*s = n[i] + '0';
 		}
-		if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = '3';
-			i++;
-			continue;
-                }
-		if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = '0';
-			i++;
-			continue;
-		}
-		if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = '7';
-			i++;
-			continue;
-		}
-		if (str[i] == 'l' || str[i] == 'L')
-			str[i] = '1';
-		i++;
+		s++;
 	}
-	return (str);
+	return (r);
 }
 
