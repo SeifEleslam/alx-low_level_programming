@@ -3,7 +3,7 @@
 
 char rot13(char* str)
 {
-	for (; *str != '/0'; str++)
+	for (; *str != '\0'; str++)
 	{
 		if ((*str >= 'A' && *str <= 'M') || (*str >= 'a' && *str <= 'm'))
 		{
