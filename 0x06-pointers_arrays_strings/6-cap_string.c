@@ -31,7 +31,7 @@ char *cap_string(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] <= 'z' && str[i] >= 'a' && string_includes(sperators, str[i - 1]))
+		if (str[i] <= 'z' && str[i] >= 'a' && (string_includes(sperators, str[i - 1]) || i == 0))
 			str[i] = str[i] - ('a' - 'A');
 		i++;
 	}
