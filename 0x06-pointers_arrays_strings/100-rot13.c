@@ -3,22 +3,22 @@
 
 char rot13(char* str)
 {
-	int i, key, currentLetter;
-	char cipher;	
+	int i;
 
-	key = 13;
-	for (i = 0, str[i] != '/0'; i++)
+	for (; *str != '/0'; str++)
 	{
-		currentLetter = str[n];
-		cipher = currentLetter + key;
-		if ((currentLetter - 'a') - key > 26)
+		if ((*str >= 'A' && *str <= 'M') || (*str >= 'a' && *str <= 'm'))
 		{
-			key = ((currentLetter - 'a') + key) % 26;
-			cipher = 'a' + key;
+			*str += 13;
+			continue;
+		} 
+		while ((*str >= 'N' && *str <= 'Z') || (*str >= 'n' && *str <= 'z'))
+		{
+			*str -= 13;
+			break;
 		}
-		str[i] = cipher;
-		key = 13;
 	}
-    return 0;
+	
+	return str;
 }
 
