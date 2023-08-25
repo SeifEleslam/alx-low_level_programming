@@ -3,8 +3,6 @@
 
 char rot13(char* str)
 {
-	int i;
-
 	for (; *str != '/0'; str++)
 	{
 		if ((*str >= 'A' && *str <= 'M') || (*str >= 'a' && *str <= 'm'))
@@ -19,6 +17,6 @@ char rot13(char* str)
 		}
 	}
 	
-	return str;
+	return (str);
 }
 
