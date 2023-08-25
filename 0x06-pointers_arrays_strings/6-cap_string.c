@@ -26,9 +26,8 @@ int string_includes(char *arr, char val)
 char *cap_string(char *str)
 {
 	int i;
-	char sperators[13];
 
-	sperators = " \t,;.!?\"(){}\n";
+	char sperators[13] = " \t,;.!?\"(){}\n";
 	i = 0;
 	while (str[i] != '\0')
 	{
