@@ -1,22 +1,31 @@
 #include <stdio.h>
 #include <string.h>
 
-char rot13(char* str)
+/**
+ *rot13 - concatenates two strings
+ *@str: the first address of the string
+ *Return: new string
+ */
+
+
+char *rot13(char *str)
 {
-	for (; *str != '\0'; str++)
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((*str >= 'A' && *str <= 'M') || (*str >= 'a' && *str <= 'm'))
+		if ((str[i] >= 'A' && str[i] <= 'M') || (str[i] >= 'a' && str[i] <= 'm'))
 		{
-			*str += 13;
+			str[i] += 13;
 			continue;
-		} 
-		while ((*str >= 'N' && *str <= 'Z') || (*str >= 'n' && *str <= 'z'))
+		}
+		while ((str[i] >= 'N' && str[i] <= 'Z') || (str[i] >= 'n' && str[i] <= 'z'))
 		{
-			*str -= 13;
+			str[i] -= 13;
 			break;
 		}
 	}
-	
+
 	return (str);
 }
 
