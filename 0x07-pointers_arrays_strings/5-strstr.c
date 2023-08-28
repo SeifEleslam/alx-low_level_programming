@@ -3,8 +3,8 @@
 int _contain(char *s, char *c);
 /**
  * _strstr - reset the parsing value to 98
- * @s: second passing pointer
- * @accept: number of repeated times
+ * @haystack: second passing pointer
+ * @needle: number of repeated times
  * Return: pointer to dest
  */
 
@@ -15,7 +15,7 @@ char *_strstr(char *haystack, char *needle)
 
 	for (i = 0 ; haystack[i] != '\0'; i++)
 		if (_contain(needle, haystack + i))
-			return (haystack + 1);
+			return (haystack + i);
 	return (0);
 }
 
