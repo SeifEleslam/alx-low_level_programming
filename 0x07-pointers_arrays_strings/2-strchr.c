@@ -1,23 +1,29 @@
-#include "main.h"
 #include <stdio.h>
-
 /**
- * _strchr - reset the parsing value to 98
- * @s: first passing pointer
- * @c: second passing pointer
- * Return: pointer to s
+ * _strchr - return first occurence address
+ *
+ * @s: char*
+ * @c: char
+ *Return: char*
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	unsigned int i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
+		if (c == s[i])
 		{
-			return (s);
+			return (&s[i]);
 		}
-		s++;
+		i++;
+	}
+	if (s[i] == c)
+	{
+		return (&s[i]);
 	}
 
-	return ('\0');
+	return (NULL);
 }
 
