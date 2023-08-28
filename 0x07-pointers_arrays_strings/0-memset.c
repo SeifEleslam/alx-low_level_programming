@@ -5,6 +5,7 @@
  * @s: first passing pointer
  * @b: second passing pointer
  * @n: number of repeated times
+ * Return: pointer to s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
