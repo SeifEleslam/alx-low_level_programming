@@ -13,7 +13,7 @@ char *_strpbrk(char *s, char *accept)
 	for (i = 0 ; s[i] != '\0'; i++)
 		for (i2 = 0; accept[i2]; i2++)
 			if (accept[i2] == s[i])
-				return (accept + i2);
+				return (s + i);
 
 	return (0);
 }
