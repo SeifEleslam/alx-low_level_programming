@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strpbrk - reset the parsing value to 98
+ * print_chessboard - reset the parsing value to 98
  * @a: second passing pointer
  */
 
