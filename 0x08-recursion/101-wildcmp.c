@@ -60,15 +60,13 @@ int wildcmp(char *s1, char *s2)
 {
 	char *s, *ss;
 
-	if(!s1)
-		return (0);
-	else if (*s2 == '\0' && (*s1 == '\0' || *(s2 - 1) == '*'))
+	ss = ignore_star(s2);
+	else if (*ss == '\0' && (*s1 == '\0' || *(s2 - 1) == '*'))
 		return (1);
-	else if (*s2 == '\0' || *s1 == '\0')
+	else if (!s1 || *s2 == '\0' || *s1 == '\0')
 		return (0);
 
-	ss = ignore_star(s2);
-	s= wildcmp_rec(s1, ss, ss);
+	s = wildcmp_rec(s1, ss, ss);
 	if (s)
 		ss = ignore_star(reach_star(ss));
 	return (wildcmp(s, ss));
