@@ -11,14 +11,14 @@ int square_root(int n, int max);
 int _sqrt_recursion(int n)
 {
 	if (n == 1 || n == 0)
-		return n;
+		return (n);
 	return (square_root(n, 0));
 }
 
 /**
  * square_root - reset the parsing value to 98
  * @n: second passing pointer
- * @max: sda
+ * @max: sda does something
  * Return: sad
  */
 
