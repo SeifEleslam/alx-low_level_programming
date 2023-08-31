@@ -10,12 +10,13 @@
 
 char *wildcmp_rec(char *s1, char *s2)
 {
-	char *r;
+	char r[2];
+
 	if (*s2 == '\0' || *s2 == '*')
 		return (s1);
 	else if (*s1 == '\0')
 	{
-		r[] = '\0\0';
+		r = '\0\0';
 		return r + 1;
 	}
 	else if (*s1 == *s2)
