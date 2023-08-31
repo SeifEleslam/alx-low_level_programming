@@ -67,8 +67,8 @@ int wildcmp(char *s1, char *s2)
 	else if (*s2 == '\0' || *s1 == '\0')
 		return (0);
 
-	ss = ignore_star(s2)
-	s = wildcmp_rec(s1, s2, s2);
+	ss = ignore_star(s2);
+	s= wildcmp_rec(s1, s2, s2);
 	if (!s)
 		ss = ignore_star(ss);
 	else
