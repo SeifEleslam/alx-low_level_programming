@@ -10,7 +10,7 @@ int square_root (int n, int max, int min);
 
 int _sqrt_recursion(int n)
 {
-	return square_root(n, n, 0;
+	return square_root(n, n, 0);
 }
 
 /**
