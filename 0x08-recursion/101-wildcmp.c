@@ -48,6 +48,6 @@ int wildcmp(char *s1, char *s2)
 	else if (*s1 == '\0')
 		return (0);
 	s = wildcmp_rec(s1, s2);
-	return (wildcmp(s, ignore_star(s2)))
+	return (wildcmp(s, ignore_star(s2)));
 }
 
