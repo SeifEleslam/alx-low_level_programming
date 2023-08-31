@@ -26,7 +26,7 @@ int _strlen_recursion(char *s)
 
 int palindrome_check(char *s, int len)
 {
-	if (_strlen_recursion(s) < =  1)
+	if (_strlen_recursion(s) <=  1)
 		return (1);
         if (s[0] == s[len-1])
         {
