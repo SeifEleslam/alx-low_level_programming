@@ -33,6 +33,6 @@ int is_prime_number(int n)
 		return (0);
 	if (n == 1 || n == 2)
 		return (1);
-	return (prime_check(n, 0));
+	return (prime_check(n, 2));
 }
 
