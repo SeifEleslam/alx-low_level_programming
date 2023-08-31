@@ -6,6 +6,13 @@
  * Return: sad
  */
 
+/**
+ * square_root - reset the parsing value to 98
+ * @n: second passing pointer
+ * @max: sda does something
+ * Return: sad
+ */
+
 int square_root(int n, int max);
 
 int _sqrt_recursion(int n)
