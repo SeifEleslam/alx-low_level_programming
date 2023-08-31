@@ -8,7 +8,7 @@
  * Return: sad
  */
 
-char *wildcmp_rec(char *s1, char *s2)
+char *wildcmp_rec(char *s1, char *s2, char *ref)
 {
 	if (*s2 == '\0' || *s2 == '*')
 		return (s1);
@@ -17,9 +17,9 @@ char *wildcmp_rec(char *s1, char *s2)
 		return '\0';
 	}
 	else if (*s1 == *s2)
-		return (wildcmp_rec(s1 + 1, s2 + 1));
+		return (wildcmp_rec(s1 + 1, s2 + 1, ref));
 	else
-		return (wildcmp_rec(s1 + 1, s2));
+		return (wildcmp_rec(s1 + 1, ref, ref));
 }
 
 /**
@@ -69,7 +69,7 @@ int wildcmp(char *s1, char *s2)
 	else if (*s2 == '\0' || *s1 == '\0')
 		return (0);
 
-	s = wildcmp_rec(s1, s2);
+	s = wildcmp_rec(s1, s2, s2);
 	if (!s)
 		ss = ignore_star(s2);
 	else
