@@ -71,7 +71,7 @@ int wildcmp(char *s1, char *s2)
 
 	s = wildcmp_rec(s1, s2);
 	if (!s)
-		ss = s2;
+		ss = ignore_star(s2);
 	else
 		ss = ignore_star(reach_star(s2));
 	return (wildcmp(s, ss));
