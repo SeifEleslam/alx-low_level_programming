@@ -6,34 +6,30 @@
  * Return: sad
  */
 
-int square_root (int n, int max, int min);
+int square_root (int n, int max);
 
 int _sqrt_recursion(int n)
 {
-	return square_root(n, n, 0);
+	return square_root(n, 0);
 }
 
 /**
  * square_root - reset the parsing value to 98
  * @n: second passing pointer
  * @max: sda
- * @min: dsadsa
  * Return: sad
  */
 
-int square_root (int n, int max, int min)
+int square_root (int n, int max)
 {
 	int mid;
 
-	if (max >= min)
+	if (max < (n / 2))
 	{
-		mid = (max - min) / 2;
-		if (mid * mid == n)
-			return mid;
-		else if (mid * mid < n)
-			return square_root(n, max, mid + 1);
+		if (max * max == n)
+			return max;
 		else
-			return square_root(n, mid-1, min);
+			return square_root(n, max + 1);
 	}
 	return (-1);
 }
