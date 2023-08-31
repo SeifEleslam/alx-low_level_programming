@@ -24,13 +24,13 @@ int _strlen_recursion(char *s)
  * Return: sad
  */
 
-void palindrome_check(char *s, int len)
+int palindrome_check(char *s, int len)
 {
 	if (_strlen_recursion(s) < =  1)
 		return (1);
         if (s[0] == s[len-1])
         {
-                palindorme_check(s + 1, len-1);
+                palindrome_check(s + 1, len-1);
         }
         else
                 return (0);
