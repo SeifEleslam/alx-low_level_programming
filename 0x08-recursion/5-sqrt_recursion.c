@@ -6,11 +6,13 @@
  * Return: sad
  */
 
-int square_root (int n, int max);
+int square_root(int n, int max);
 
 int _sqrt_recursion(int n)
 {
-	return square_root(n, 0);
+	if (n == 1 || n == 0)
+		return n;
+	return (square_root(n, 0));
 }
 
 /**
@@ -20,15 +22,15 @@ int _sqrt_recursion(int n)
  * Return: sad
  */
 
-int square_root (int n, int max)
+int square_root(int n, int max)
 {
 
 	if (max < (n / 2))
 	{
 		if (max * max == n)
-			return max;
+			return (max);
 		else
-			return square_root(n, max + 1);
+			return (square_root(n, max + 1));
 	}
 	return (-1);
 }
