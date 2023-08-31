@@ -33,6 +33,21 @@ char *ignore_star(char *s)
 }
 
 /**
+ * reach_star - reset the parsing value to 98
+ * @s: second passing pointer
+ * Return: sad
+ */
+
+char *reach_star(char *s)
+{
+	if (*s == '*' || *s == '\0')
+		return (s);
+	else
+		return (ignore_star(s + 1));
+}
+
+
+/**
  * wildcmp - reset the parsing value to 98
  * @s1: second passing pointer
  * @s2: wildcmp
@@ -48,6 +63,6 @@ int wildcmp(char *s1, char *s2)
 	else if (*s1 == '\0')
 		return (0);
 	s = wildcmp_rec(s1, s2);
-	return (wildcmp(s, ignore_star(s2)));
+	return (wildcmp(s, ignore_star(reach_star(s2))));
 }
 
