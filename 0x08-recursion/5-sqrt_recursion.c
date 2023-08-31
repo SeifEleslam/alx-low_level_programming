@@ -22,7 +22,6 @@ int _sqrt_recursion(int n)
 
 int square_root (int n, int max)
 {
-	int mid;
 
 	if (max < (n / 2))
 	{
