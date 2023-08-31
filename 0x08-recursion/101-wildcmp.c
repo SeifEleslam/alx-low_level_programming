@@ -10,8 +10,14 @@
 
 char *wildcmp_rec(char *s1, char *s2)
 {
-	if (*s2 == '\0' || *s2 == '*' || *s1 == '\0')
+	char *r;
+	if (*s2 == '\0' || *s2 == '*')
 		return (s1);
+	else if (*s1 == '\0')
+	{
+		r[] = '\0\0';
+		return r + 1;
+	}
 	else if (*s1 == *s2)
 		return (wildcmp_rec(s1 + 1, s2 + 1));
 	else
@@ -56,13 +62,17 @@ char *reach_star(char *s)
 
 int wildcmp(char *s1, char *s2)
 {
-	char *s;
+	char *s, *ss;
 
 	if (*s2 == '\0' && *s1 == '\0')
 		return (1);
 	else if (*s1 == '\0')
 		return (0);
 	s = wildcmp_rec(s1, s2);
-	return (wildcmp(s, ignore_star(reach_star(s2))));
+	if (*(s - 1) == '\0')
+		ss = s2;
+	else
+		ss = ignore_star(reach_star(s2));
+	return (wildcmp(s, ss));
 }
 
