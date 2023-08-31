@@ -14,11 +14,11 @@ int prime_check(int n, int max)
 	if (max < (n / 2))
 	{
 		if (n % max == 0)
-			return (1);
+			return (0);
 		else
 			return (prime_check(n, max + 1));
 	}
-	return (0);
+	return (1);
 }
 
 /**
