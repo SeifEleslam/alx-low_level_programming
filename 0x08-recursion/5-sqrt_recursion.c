@@ -17,8 +17,8 @@ int _sqrt_recursion(int n)
 	sqrt_n = _sqrt_recursion(n / 2);
 	if(sqrt_n * sqrt_n == n)	
 		return (sqrt_n);
-	else if (sqrt_n + 1 > 2)
-		return (sqrt_n + 1);
+	else if (sqrt_n > 2)
+		return (sqrt_n);
 	else
 		return (-1);
 }
