@@ -24,7 +24,7 @@ char *wildcmp_rec(char *s1, char *s2)
  * Return: sad
  */
 
-chae *ignore_star(char *s)
+char *ignore_star(char *s)
 {
 	if (*s != '*')
 		return (s);
@@ -41,7 +41,7 @@ chae *ignore_star(char *s)
 
 int wildcmp(char *s1, char *s2)
 {
-	char s;
+	char *s;
 
 	if (*s2 == '\0')
 		return (1);
