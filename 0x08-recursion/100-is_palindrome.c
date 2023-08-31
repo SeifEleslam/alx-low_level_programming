@@ -29,7 +29,7 @@ int palindrome_check(char *s, int len)
 	if (len / 2 <=  0)
 		return (1);
 	if (s[0] == s[len-1])
-               return palindrome_check(s + 1, len-1);
+               return palindrome_check(s + 1, len - 2);
 	else
 		return (0);
 }
