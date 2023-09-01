@@ -8,7 +8,7 @@
  * Return: int
  */
 
-int main(int argc, int const *argv[])
+int main(int argc, int *argv[])
 {
 	char s[5] = "Error";
 	int i, n1, n2;
@@ -40,9 +40,13 @@ int _to_int(char *s)
 	r = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if(s[i] == '-')
+			continue;
 		r *= 10;
 		r += s[i] - '0';
 	}
+	if(s[0] == '-')
+		return (-1 * r);
 	return (r);
 }
 
@@ -52,6 +56,7 @@ int _to_int(char *s)
  * @n: array length
  *
  */
+
 void print_number(int n)
 {
 	if (n < 0)
