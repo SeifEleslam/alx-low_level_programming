@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * main - main Entry
@@ -7,7 +7,7 @@ include "main.h"
  * Return: int
  */
 
-int main(int argc, char const __attribute__ ((unused)) *argv[])
+int main(int argc, char const __attribute__((unused)) *argv[])
 {
 	_putchar('0' + argc - 1);
 	_putchar('\n');
