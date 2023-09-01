@@ -23,6 +23,7 @@ int main(int argc, int *argv[])
 
 	i = _to_int(argv[1]) * _to_int(argv[2]);
 	print_number(i);
+	_putchar('\n');
 	return (0);
 }
 
