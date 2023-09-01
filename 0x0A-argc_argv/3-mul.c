@@ -50,7 +50,7 @@ void print_number(int n)
  * Return: int
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	char s[5] = "Error";
 	int i;
