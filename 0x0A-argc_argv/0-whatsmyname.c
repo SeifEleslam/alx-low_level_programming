@@ -1,5 +1,15 @@
 #include <stdio.h>
 
+
+/**
+ * main - main Entry
+ *
+ * @argc: int
+ * @argv: char**
+ *
+ * Return: int
+ */
+
 int main(int argc, char const *argv[])
 {
 	int i;
@@ -7,5 +17,6 @@ int main(int argc, char const *argv[])
 	for (i = 0; argv[0][i] != '\0'; i++)
 		_putchar(s[i]);
 	_putchar('\n');
+	return (0);
 }
 
