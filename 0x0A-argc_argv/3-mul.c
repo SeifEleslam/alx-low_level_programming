@@ -1,32 +1,5 @@
 #include "main.h"
 
-
-/**
- * main - main Entry
- * @argc: int
- * @argv: char**
- * Return: int
- */
-
-int main(int argc, int *argv[])
-{
-	char s[5] = "Error";
-	int i, n1, n2;
-
-	if (argc - 1 < 2)
-	{
-		for (i = 0; s[i] != '\0'; i++)
-			_putchar(s[i]);
-		_putchar('\n');
-		return (1);
-	}
-
-	i = _to_int(argv[1]) * _to_int(argv[2]);
-	print_number(i);
-	_putchar('\n');
-	return (0);
-}
-
 /**
  * _to_int - convert string to int
  *
@@ -68,5 +41,31 @@ void print_number(int n)
 	if (n > 10)
 		print_number(n / 10);
 	_putchar(n % 10 + '0');
+}
+
+/**
+ * main - main Entry
+ * @argc: int
+ * @argv: char**
+ * Return: int
+ */
+
+int main(int argc, int *argv[])
+{
+	char s[5] = "Error";
+	int i, n1, n2;
+
+	if (argc - 1 < 2)
+	{
+		for (i = 0; s[i] != '\0'; i++)
+			_putchar(s[i]);
+		_putchar('\n');
+		return (1);
+	}
+
+	i = _to_int(argv[1]) * _to_int(argv[2]);
+	print_number(i);
+	_putchar('\n');
+	return (0);
 }
 
