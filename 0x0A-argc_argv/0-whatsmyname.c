@@ -10,7 +10,7 @@
  * Return: int
  */
 
-int main(int (void) argc, char const *argv[])
+int main(int __attribute__ ((unused)) argc, char const *argv[])
 {
 	int i;
 	
