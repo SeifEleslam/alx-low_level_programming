@@ -8,24 +8,59 @@
  * Return: int
  */
 
-int main(int argc, char const *argv[])
+int main(int argc, int const *argv[])
 {
 	char s[5] = "Error";
-	int i;
+	int i, n1, n2;
 
 	if (argc - 1 < 2)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 			_putchar(s[i]);
+		_putchar('\n');
 		return (1);
 	}
 
-	i = (argv[1] - '0') * (argv[2] - '0');
-	do
-	{
-		_putchar(i % 10 + '0');
-		i = i / 10;
-	} while (i > 0)
+	i = _to_int(argv[1]) * _to_int(argv[2]);
+	print_number(i);
 	return (0);
+}
+
+/**
+ * _to_int - convert string to int
+ *
+ * @s: char*
+ * Return: int
+ */
+
+int _to_int(char *s)
+{
+	int i, r;
+
+	r = 0;
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		r *= 10;
+		r += s[i] - '0';
+	}
+	return (r);
+}
+
+
+/**
+ * print_number - reverse the given string
+ * @n: array length
+ *
+ */
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -1 * n;
+	}
+	if (n > 10)
+		print_number(n / 10);
+	_putchar(n % 10 + '0');
 }
 
