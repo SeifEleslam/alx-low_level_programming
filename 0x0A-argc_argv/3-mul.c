@@ -14,12 +14,12 @@ int _to_int(char *s)
 	r = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if(s[i] == '-')
+		if (s[i] == '-')
 			continue;
 		r *= 10;
 		r += s[i] - '0';
 	}
-	if(s[0] == '-')
+	if (s[0] == '-')
 		return (-1 * r);
 	return (r);
 }
