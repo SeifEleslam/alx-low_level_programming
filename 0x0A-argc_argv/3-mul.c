@@ -53,7 +53,7 @@ void print_number(int n)
 int main(int argc, int *argv[])
 {
 	char s[5] = "Error";
-	int i, n1, n2;
+	int i;
 
 	if (argc - 1 < 2)
 	{
