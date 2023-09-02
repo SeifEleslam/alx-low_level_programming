@@ -24,7 +24,7 @@ int _to_int(char *s)
 		else
 			return ('\0');
 	}
-	if(s[0] == '-')
+	if (s[0] == '-')
 		return (-1 * r);
 	return (r);
 }
