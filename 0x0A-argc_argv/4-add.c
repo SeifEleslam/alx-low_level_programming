@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
-		n = _to_int(argv[i])
+		n = _to_int(argv[i]);
 		if (n)
 			sum += n;
 		else
