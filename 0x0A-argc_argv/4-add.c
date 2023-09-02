@@ -1,3 +1,14 @@
+#include "main.h"
+
+/**
+ * main - main Entry
+ *
+ * @argc: int
+ * @argv: char**
+ *
+ * Return: int
+ */
+
 int main(int argc, char *argv[])
 {
 	char s[5] = "Error";
