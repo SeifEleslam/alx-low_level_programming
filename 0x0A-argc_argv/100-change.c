@@ -36,6 +36,7 @@ int main(int argc, char const *argv[])
 		n = n % values[i];
 	}
 	print_number(sum);
+	_putchar('\0');
 	return (0);
 
 }
