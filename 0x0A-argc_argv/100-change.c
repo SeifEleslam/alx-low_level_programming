@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 	{
 		for (i = 0; s[i] != '\0'; i++)
 			_putchar(s[i]);
-		_putchar('\n');		
+		_putchar('\n');
 		return (1);
 	}
 
@@ -38,7 +38,6 @@ int main(int argc, char const *argv[])
 	print_number(sum);
 	_putchar('\n');
 	return (0);
-
 }
 
 
