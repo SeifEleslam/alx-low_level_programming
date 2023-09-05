@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strdup - duplicate string and return duplicat
+ * argstostr - duplicate string and return duplicat
  * @av: char**
  * @ac: int
  * Return: char*
