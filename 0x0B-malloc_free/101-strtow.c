@@ -7,6 +7,8 @@
  * Return: char*
  */
 
+int word_len(char *s);
+
 char **strtow(char *str)
 {
 	int i, l, n, len;
