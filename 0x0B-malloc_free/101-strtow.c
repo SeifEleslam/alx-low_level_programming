@@ -47,8 +47,8 @@ char **strtow(char *str)
 		else
 			i++;
 	}
+	newStr[n] = NULL;
 	return (newStr);
-		
 }
 
 /**
