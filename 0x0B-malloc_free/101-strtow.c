@@ -12,19 +12,19 @@ int word_len(char *s);
 char **strtow(char *str)
 {
 	int i, l, n, len;
-	char **newstr;
+	char **newStr;
 
-	if (str == NULL || str == "")
-		return NULL;
 	len = 0;
 	for (i = 0; str[i] != '\0'; i++)
 		if (str[i] != ' ' && (i == 0 || str[i-1] == ' '))
-			len++;
+			len++;	
+	if (str == NULL || len == 0)
+		return NULL;
+
 	newStr = (char **) malloc(sizeof(char) * len + 1);
 	if (newStr == NULL)
 	       return NULL;
 	i = 0, l = 0, n = 0;
-	newStr[i] = malloc
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ' && (i == 0 || str[i-1] == ' '))
