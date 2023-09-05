@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * _strdup - duplicate string and return duplicat
+ * @av: char**
+ * @ac: int
+ * Return: char*
+ */
+
+char *argstostr(int ac, char **av);
+{
+	int i, l, len;
+	char *str;
+
+	if (av == null || ac <= 0)
+		return (NULL);
+	len = 0;
+	for (i = 0; i < ac; i++)
+		for (l = 0; av[i] != NULL && av[i][l] != '\0'; l++)
+			len++;
+	str = malloc((len + 1) * sizeof(char) + 1);
+	if(str == NULL)
+		return (NULL);
+	len = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (l = 0; av[i] != NULL && av[i][l] != '\0'; l++)
+		{
+			str[len] = av[i][l];
+			len++;
+		}
+	}
+	return (str);
+}
+
