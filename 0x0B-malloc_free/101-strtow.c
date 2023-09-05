@@ -37,7 +37,7 @@ char **strtow(char *str)
 				free(newStr);
 				return (NULL);
 			}
-			for (l = 0; str[i] != ' ' && str [i] != '\0'; l++)
+			for (l = 0; str[i] != ' ' && str[i] != '\0'; l++)
 			{
 				newStr[n][l] = str[i];
 				i++;
@@ -60,6 +60,7 @@ int word_len(char *s)
 {
 	int i;
 
+	i = 0;
 	while (s[i] != ' ' && s[i] != '\0')
 		i++;
 	return (i);
