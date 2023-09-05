@@ -19,18 +19,25 @@ char **strtow(char *str)
 		if (str[i] != ' ' && (i == 0 || str[i-1] == ' '))
 			len++;	
 	if (str == NULL || len == 0)
-		return NULL;
+		return (NULL);
 
 	newStr = (char **) malloc(sizeof(char) * len + 1);
 	if (newStr == NULL)
-	       return NULL;
+	       return (NULL);
 	i = 0, l = 0, n = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ' && (i == 0 || str[i-1] == ' '))
 		{
 			newStr[n] = malloc((word_len(str + i) + 1) * sizeof(char));
-			for (l = i; str[l] != ' ' && str [l] != '\0'; l++)
+			if (newStr[n] == NULL)
+			{
+				for(i = 0; i < n; i++)
+					free(newStr[i]);
+				free(newStr);
+				return (NULL);
+			}
+			for (l = 0; str[i] != ' ' && str [i] != '\0'; l++)
 			{
 				newStr[n][l] = str[i];
 				i++;
