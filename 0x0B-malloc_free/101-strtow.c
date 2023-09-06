@@ -7,6 +7,7 @@ int word_len(char *s);
  * strtow - duplicate string and return duplicat
  * @str: char*
  * Return: char**
+ *
  */
 
 char **strtow(char *str)
