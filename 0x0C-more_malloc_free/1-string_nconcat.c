@@ -48,7 +48,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 }
 
 /**
- * _strlen_recursion - return the length of parsing param
+ * _strlen - return the length of parsing param
  * @s: string passing pointer
  *
  * Return: length of s
@@ -58,7 +58,7 @@ int _strlen(char *s)
 	int i ;
 
 	i=0;
-	while (s[0] != '\0' || s != NULL)
+	while (s[i] != '\0' || s != NULL)
 		i++;
 	return (i);
 }
