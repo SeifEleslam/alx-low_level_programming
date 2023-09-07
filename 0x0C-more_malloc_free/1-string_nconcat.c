@@ -10,22 +10,41 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int len, len2, i;
-	char *newStr;
+	int len, _pos, _n, _glob_pos, i;
+	char *concat;
 
-	len = 0, len2 = 0;
 	for (i = 0; s1 != NULL && s1[i] != '\0'; i++)
 		len++;
-	for (i = 0; s2 != NULL && s2[i] != '\0'; i++)
-		len2++;
-	if (n > len2)
-		n = len2;
-	newStr = malloc((len + n + 1) * sizeof(char));
-	if (newStr == NULL)
+	len += n;
+	concat = malloc(len * sizeof(char) + 1);
+	_pos = 0, _n = 0, _glob_pos = 0;
+	if (concat == NULL)
 		return (NULL);
-	for(i = 0; s1 != NULL && s1[i] != '\0'; i++)
-		newStr[i] = s1[i];
-	for(; s2 != NULL && i - len < n && s2[i - len] != '\0'; i++)
-		newStr[i] = s2[i-len];
-	return (newStr);
+	if (s1 != NULL)
+	{
+		while (s1[_pos])
+		{
+			concat[_glob_pos] = s1[_pos];
+			_pos++;
+			_glob_pos++;
+		}
+	}
+	_pos = 0;
+	len = 0;
+	for (i = 0; s2 != NULL && s1[i] != '\0'; i++)
+		len++;
+	if (s2 != NULL)
+	{
+		_n = n;
+		if (_n > len)
+			_n = len;
+		while (s2[_pos] && _pos < _n)
+		{
+			concat[_glob_pos] = s2[_pos];
+			_pos++;
+			_glob_pos++;
+		}
+	}
+	concat[_glob_pos] = '\0';
+	return (concat);
 }
