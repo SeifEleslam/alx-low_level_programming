@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _strlen_recursion(char *s);
 /**
  * string_nconcat - concatenation of s1 s2
  * @s1: char *
