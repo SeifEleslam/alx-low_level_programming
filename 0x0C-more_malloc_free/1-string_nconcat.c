@@ -11,24 +11,20 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int len1, len2, i;
+	int len, i;
 	char *newStr;
 
-	len1 = 0, len2 = 0;
+	len = 0;
 	for (i = 0; s1 != NULL && s1[i] != '\0'; i++)
-		len1++;
-	for (i = 0; s2 != NULL && s2[i] != '\0'; i++)
-		len2++;
-	if (len1 + len2 <= 0)
+		len++;
+	if (len + n <= 0)
 		return (NULL);
-	if (len2 > n)
-	       len2 = n;
-	newStr = malloc((len1 + len2 + 1) * sizeof(char));
+	newStr = malloc((len1 + n + 1) * sizeof(char));
 	if (newStr == NULL)
 		return (NULL);
 	for(i = 0; s1 != NULL && s1[i] != '\0'; i++)
 		newStr[i] = s1[i];
-	for(; s2 != NULL && i - len1 < len2 && s2[i - len1] != '\0'; i++)
+	for(; s2 != NULL && i - len1 < n && s2[i - len1] != '\0'; i++)
 		newStr[i] = s2[i-len1];
 	return (newStr);
 }
