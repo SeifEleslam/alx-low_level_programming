@@ -3,7 +3,6 @@
 
 /**
  *  array_range - create arrange array from min to max
- *
  * @min: int
  * @max: int
  * Return: int*
