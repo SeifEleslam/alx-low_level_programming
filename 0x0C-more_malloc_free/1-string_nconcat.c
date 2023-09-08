@@ -55,7 +55,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  */
 int _strlen_recursion(char *s)
 {
-	if (s[0] == '\0' || s == NULL)
-		return (0);
-	return (1 + _strlen_recursion(&s[1]));
+	unsigned int i;
+
+	i = 0;
+	while (s != NULL && s[i] != '\0')
+		i++;
+	return (i);
 }
