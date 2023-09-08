@@ -60,5 +60,5 @@ int _strlen(char *s)
 	i=0;
 	while (s[i] != '\0' || s != NULL)
 		i++;
-	return (i);
+	return (i + 1);
 }
