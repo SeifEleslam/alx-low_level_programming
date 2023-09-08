@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _strlen_recursion(char *s);
+int _strlen(char *s);
 /**
  * string_nconcat - concatenation of s1 s2
+ *
  * @s1: char *
  * @s2: char *
  * @n: int
@@ -11,24 +12,53 @@ int _strlen_recursion(char *s);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int len1, len2, i;
-	char *newStr;
+	int len, _pos, _n, _glob_pos;
+	char *concat;
 
-	len1 = 0, len2 = 0;
-	for (i = 0; s1[i] != '\0'; i++)
-		len1++;
-	for (i = 0; s2[i] != '\0'; i++)
-		len2++;
-	if (len1 + len2 <= 0)
+	len = _strlen(s1) + n;
+	concat = malloc(len * sizeof(char) + 1);
+	_pos = 0, _n = 0, _glob_pos = 0;
+	if (concat == NULL)
 		return (NULL);
-	if (len2 > n)
-	       len2 = n;
-	newStr = malloc((len1 + len2 + 1) * sizeof(char));
-	if (newStr = NULL)
-		return (NULL);
-	for(i = 0; s1[i] != '\0'; i++)
-		newStr[i] = s1[i];
-	for(;s2[i - len1] != '\0'; i++)
-		newStr[i] = s2[i-len1];
-	return (newStr);
+
+	if (s1 != NULL)
+	{
+		while (s1[_pos])
+		{
+			concat[_glob_pos] = s1[_pos];
+			_pos++;
+			_glob_pos++;
+		}
+	}
+	_pos = 0;
+	if (s2 != NULL)
+	{
+		_n = n;
+		if (_n > _strlen(s2))
+			_n = _strlen(s2);
+		while (s2[_pos] && _pos < _n)
+		{
+			concat[_glob_pos] = s2[_pos];
+			_pos++;
+			_glob_pos++;
+		}
+	}
+	concat[_glob_pos] = '\0';
+	return (concat);
+}
+
+/**
+ * _strlen - return the length of parsing param
+ * @s: string passing pointer
+ *
+ * Return: length of s
+ */
+int _strlen(char *s)
+{
+	int i ;
+
+	i=0;
+	while (s[i] != '\0' || s != NULL)
+		i++;
+	return (i);
 }
