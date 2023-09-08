@@ -19,9 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	concat = malloc(len * sizeof(char) + 1);
 	_pos = 0, _n = 0, _glob_pos = 0;
 	if (concat == NULL)
-	{
 		return (NULL);
-	}
 
 	if (s1 != NULL)
 	{
@@ -37,9 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		_n = n;
 		if (_n > _strlen_recursion(s2))
-		{
 			_n = _strlen_recursion(s2);
-		}
 		while (s2[_pos] && _pos < _n)
 		{
 			concat[_glob_pos] = s2[_pos];
@@ -60,9 +56,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 int _strlen_recursion(char *s)
 {
 	if (s[0] == '\0' || s == NULL)
-	{
 		return (0);
-	}
 	return (1 + _strlen_recursion(&s[1]));
-
 }
