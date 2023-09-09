@@ -15,17 +15,19 @@ void _error();
 
 int main(int ac, char **av)
 {
-	char *output;
+	char *output, *freeref;
 	int i;
 
 	if (ac != 3)
 		_error();
 	output = _mul(av[1], av[2], _strlen(av[1]), _strlen(av[2]));
+	freeref = output;
 	for (i = 0; output[0] == '0' && _strlen(output) > 1; i++)
 		output++;
 	for (i = 0; output[i] != '\0'; i++)
 		_putchar(output[i]);
 	_putchar('\n');
+	free(freeref);
 	return (0);
 }
 
@@ -49,7 +51,10 @@ char *_mul(char *n1, char *n2, int len1, int len2)
 		for (l = len2; l > 0; l--)
 		{
 			if (!(n1[i - 1] >= '0' && n1[i - 1] <= '9') || !(n2[l - 1] >= '0' && n2[l - 1] <= '9'))
+			{
+				free(muls_sum);
 				_error();
+			}
 			mul_size = len1 - i + len2 - l + 2;
 			single_mul = _calloc(mul_size, sizeof(char));
 			mul_num = (n1[i - 1] - '0') * (n2[l - 1] - '0');
