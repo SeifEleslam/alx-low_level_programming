@@ -10,6 +10,8 @@ void _error();
 
 /**
  * main - check the code for
+ * @ac - int
+ * @av - char**
  * Return: if run correct 0.
  */
 
@@ -32,7 +34,7 @@ int main(int ac, char **av)
 }
 
 /**
- * -mul - check the code for
+ * _mul - check the code for
  * @n1: char *
  * @n2: char *
  * @len1: int
@@ -54,7 +56,8 @@ char *_mul(char *n1, char *n2, int len1, int len2)
 		{
 			if (n2[l - 1] == '0')
 				continue;
-			if (!(n1[i - 1] >= '0' && n1[i - 1] <= '9') || !(n2[l - 1] >= '0' && n2[l - 1] <= '9'))
+			if (!(n1[i - 1] >= '0' && n1[i - 1] <= '9') ||
+			!(n2[l - 1] >= '0' && n2[l - 1] <= '9'))
 			{
 				free(muls_sum);
 				_error();
@@ -123,7 +126,7 @@ char *_calloc(unsigned int nmemb, unsigned int size)
 }
 
 /**
- * strlen - check the code for
+ * _strlen - check the code for
  * @s: char *
  * Return: len.
  */
@@ -141,7 +144,7 @@ int _strlen(char *s)
 /**
  * _error - check the code for
  */
-void _error()
+void _error(void)
 {
 	char err[] = "Error";
 	int i;
