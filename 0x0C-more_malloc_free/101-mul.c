@@ -48,8 +48,12 @@ char *_mul(char *n1, char *n2, int len1, int len2)
 	muls_sum = _calloc(len1 + len2, sizeof(char));
 	for (i = len1; i > 0; i--)
 	{
+		if (n1[i - 1] == '0')
+			continue;
 		for (l = len2; l > 0; l--)
 		{
+			if (n2[l - 1] == '0')
+				continue;
 			if (!(n1[i - 1] >= '0' && n1[i - 1] <= '9') || !(n2[l - 1] >= '0' && n2[l - 1] <= '9'))
 			{
 				free(muls_sum);
@@ -84,6 +88,8 @@ char *_sum(char *n1, char *n2, int len1, int len2)
 	i = 1, carry = 0;
 	while (i <= len1)
 	{
+		if (len2 - i < 0 && carry == 0)
+			break;
 		sec_num = len2 - i >= 0 ? n2[len2 - i] : '0';
 		tmp_sum = n1[len1 - i] + sec_num - 2 * '0' + carry;
 		n1[len1 - i] = tmp_sum % 10 + '0';
