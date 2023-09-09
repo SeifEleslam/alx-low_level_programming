@@ -61,6 +61,7 @@ char *_mul(char *n1, char *n2, int len1, int len2)
 			single_mul[1] = (mul_num % 10) + '0';
 			single_mul[0] = (mul_num / 10) + '0';
 			_sum(muls_sum, single_mul, len1 + len2, mul_size);
+			free(single_mul);
 		}
 	}
 	return (muls_sum);
