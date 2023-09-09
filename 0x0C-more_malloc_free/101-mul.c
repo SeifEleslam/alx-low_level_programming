@@ -6,12 +6,12 @@ int _strlen(char *s);
 char *_sum(char *n1, char *n2, int len1, int len2);
 char *_calloc(unsigned int nmemb, unsigned int size);
 char *_mul(char *n1, char *n2, int len1, int len2);
-void _error();
+void _error(void);
 
 /**
  * main - check the code for
- * @ac - int
- * @av - char**
+ * @ac: int
+ * @av: char**
  * Return: if run correct 0.
  */
 
