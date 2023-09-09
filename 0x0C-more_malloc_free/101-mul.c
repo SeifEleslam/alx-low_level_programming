@@ -21,7 +21,7 @@ int main(int ac, char **av)
 	if (ac != 3)
 		_error();
 	output = _mul(av[1], av[2], _strlen(av[1]), _strlen(av[2]));
-	if (output[0] == '0')
+	for (i = 0; output[0] == '0' && _strlen(output) > 1; i++)
 		output++;
 	for (i = 0; output[i] != '\0'; i++)
 		_putchar(output[i]);
