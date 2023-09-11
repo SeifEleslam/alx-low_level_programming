@@ -17,6 +17,6 @@ void init_dog(struct dog *d)
 			printf("Age: %f\n", d.age);
 		else
 			printf("Age: %s\n", "(nil)");
-		printf("Owner: %s\n", d.name ? d.name : "(nil)");
+		printf("Owner: %s\n", d.owner ? d.owner : "(nil)");
 	}
 }
