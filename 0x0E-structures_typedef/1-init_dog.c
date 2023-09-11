@@ -1,3 +1,5 @@
+#include "dog.h"
+
 /**
  * init_dog - check the code for
  * @d: struct dog
