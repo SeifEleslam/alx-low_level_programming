@@ -4,12 +4,12 @@
 #include "dog.h"
 
 /**
- * init_dog - check the code for
- * @d: struct dog
+ * new_dog - check the code for
  * @name: char*
  * @age: float
  * @owner: char*
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
@@ -33,7 +33,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	for (i = 0; name[i] != '\0'; i++)
 		d->name[i] = name[i];
-	for (i = 0; name[i] != '\0'; i++)
+	for (i = 0; owner[i] != '\0'; i++)
 		d->owner[i] = owner[i];
 	d->age = age;
 	return (d);
