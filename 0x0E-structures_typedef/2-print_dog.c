@@ -1,4 +1,6 @@
 #include "dog.h"
+#include <stdio.h>
+
 
 /**
  * init_dog - check the code for
