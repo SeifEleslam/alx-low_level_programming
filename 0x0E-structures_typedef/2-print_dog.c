@@ -3,12 +3,12 @@
 
 
 /**
- * init_dog - check the code for
+ * print_dog - check the code for
  * @d: struct dog
  */
 
 
-void init_dog(struct dog *d)
+void print_dog(struct dog *d)
 {
 	if (d)
 	{
