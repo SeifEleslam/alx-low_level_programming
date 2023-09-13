@@ -12,8 +12,8 @@
 
 int main(int ac, char *av[])
 {
-  int n2;
-  int (*op_func)(int, int);
+	int n2;
+	int (*op_func)(int, int);
 
 	if (ac != 4)
 	{
@@ -22,19 +22,16 @@ int main(int ac, char *av[])
 	}
 	n2 = atoi(av[3]);
 	op_func = get_op_func(av[2]);
-
 	if (!op_func)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
 	if (n2 == 0 && (strcmp("/", av[2]) == 0 || strcmp("%", av[2]) == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	printf("%d\n", op(atoi(av[1]), n2);
+	printf("%d\n", op_func(atoi(av[1]), n2));
 	return (0);
 }
