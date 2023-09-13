@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "3-calc.h"
 
@@ -9,18 +10,18 @@
  * Return: int defined success status
  */
 
-int main(int argc, char *argv[])
+int main(int ac, char *av[])
 {
   int n2;
   int (*op_func)(int, int);
 
-	if (argc != 4)
+	if (ac != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	n2 = atoi(argv[3]);
-	op = get_op_func(argv[2]);
+	n2 = atoi(av[3]);
+	op_func = get_op_func(av[2]);
 
 	if (!op_func)
 	{
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (n2 == 0 && (strcmp("/", argv[2]) == 0 || strcmp("%", argv[2]) == 0))
+	if (n2 == 0 && (strcmp("/", av[2]) == 0 || strcmp("%", av[2]) == 0))
 	{
 		printf("Error\n");
 		exit(100);
