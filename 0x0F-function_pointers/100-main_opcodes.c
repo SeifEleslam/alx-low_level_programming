@@ -5,7 +5,7 @@
  * main - Entry point
  * @ac: n of params
  * @av: params
- * Return: 0 
+ * Return: 0
  */
 
 int main(int ac, char *av[])
