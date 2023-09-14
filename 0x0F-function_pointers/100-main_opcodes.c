@@ -18,7 +18,7 @@ int main(int ac, char *av[])
 		return (1);
 	}
 	n = atoi(av[1]);
-	if (n <= 0)
+	if (n < 0)
 	{
 		printf("Error\n");
 		exit(2);
