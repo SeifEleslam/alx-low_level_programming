@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 	va_start(itms, format);
 	first = 0;
 	i = 0;
-	while (format[i] != '\0')
+	while (format && format[i] != '\0')
 	{
 		func = funcs[format[i] - 'a'];
 		if (func)
