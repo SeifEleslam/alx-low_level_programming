@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	int first;
-	print_func *funcs[26];
+	print_func funcs[26];
 	void (*func)(va_list);
 	va_list itms;
 
