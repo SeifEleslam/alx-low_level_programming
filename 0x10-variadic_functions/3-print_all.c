@@ -13,8 +13,15 @@ void print_all(const char * const format, ...)
 	int i;
 	int first;
 	print_func *funcs[26];
-	print_func *func;
+	void (*func)(va_list);
 	va_list itms;
+
+	i = 0;
+	while (i < 26)
+	{
+		funcs[i] = NULL;
+		i++;
+	}
 
 	funcs['c' - 'a'] = print_char;
 	funcs['i' - 'a'] = print_int;
@@ -79,9 +86,5 @@ void print_float(va_list list)
 void print_string(va_list list)
 {
 	char *str = va_arg(list, char*);
-
-	if (str)
-		printf("%s", str);
-	else
-		printf("(nil)");
+	printf("%s", str ? str : "(nil)");
 }
