@@ -3,9 +3,8 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 /**
- * print_strings - print strings
- * @separator: - char to sperate ints
- * @n: - num of args
+ * print_all - print strings
+ * @format: - char to sperate ints
  * Return: void
  */
 void print_all(const char * const format, ...)
@@ -50,22 +49,22 @@ void print_all(const char * const format, ...)
 
 /**
  * print_char - prints a char
- * @itms: va_list 
- * Return: void
- */
-void print_char(va_list list)
-{
-	printf("%c", (char) va_arg(list, int));
-}
-
-/**
- * print_int - prints an int 
  * @itms: va_list
  * Return: void
  */
-void print_int(va_list list)
+void print_char(va_list itms)
 {
-	printf("%d", va_arg(list, int));
+	printf("%c", (char) va_arg(itms, int));
+}
+
+/**
+ * print_int - prints an int
+ * @itms: va_list
+ * Return: void
+ */
+void print_int(va_list itms)
+{
+	printf("%d", va_arg(itms, int));
 }
 
 /**
@@ -73,9 +72,9 @@ void print_int(va_list list)
  * @itms: va_list
  * Return: void
  */
-void print_float(va_list list)
+void print_float(va_list itms)
 {
-	printf("%f", (float) va_arg(list, double));
+	printf("%f", (float) va_arg(itms, double));
 }
 
 /**
@@ -83,8 +82,9 @@ void print_float(va_list list)
  * @itms: va_list
  * Return: void
  */
-void print_string(va_list list)
+void print_string(va_list itms)
 {
-	char *str = va_arg(list, char*);
+	char *str = va_arg(itms, char*);
+
 	printf("%s", str ? str : "(nil)");
 }
