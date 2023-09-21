@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
+ */
+
 typedef struct list_s
 {
 	char *str;
