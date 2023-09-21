@@ -8,9 +8,9 @@
 
 void print_num(size_t num)
 {
-    if (num / 10 > 0)
-        print_num(num / 10);
-    _putchar(num % 10 + '0');
+	if (num / 10 > 0)
+		print_num(num / 10);
+	_putchar(num % 10 + '0');
 }
 
 /**
@@ -20,9 +20,9 @@ void print_num(size_t num)
  */
 void print_str(char *s, size_t len)
 {
-    int i;
-
-    for (i = 0; i < len; i++)
-        _putchar(s[i]);
+	int i;
+	
+	for (i = 0; i < len; i++)
+		_putchar(s[i]);
 }
 
