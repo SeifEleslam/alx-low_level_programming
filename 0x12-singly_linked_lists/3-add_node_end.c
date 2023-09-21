@@ -1,12 +1,12 @@
 #include "lists.h"
 /**
- * add_node - check the code
+ * add_node_end - check the code
  * @str: str
  * @head: head
  * Return: new node
  */
 
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new;
 
