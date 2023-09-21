@@ -8,7 +8,6 @@
 
 size_t print_list(const list_t *h)
 {
-	char err[5] = "(nil)";
 	size_t i;
 	
 	i = 0;
