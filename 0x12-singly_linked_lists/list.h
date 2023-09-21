@@ -12,5 +12,7 @@ int _putchar(char);
 void print_num(size_t num);
 void print_str(char *s, size_t len);
 
+size_t print_list(const list_t *h);
+
 #endif
 
