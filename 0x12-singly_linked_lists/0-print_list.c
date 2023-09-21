@@ -1,4 +1,4 @@
-#include "main.h"
+#include "list.h"
 
 /**
  * print_list - print linked list
@@ -23,6 +23,6 @@ size_t print_list(const list_t *h)
         h = h->next;
         i++;
     }
-    return i;
+    return (i);
 }
 
