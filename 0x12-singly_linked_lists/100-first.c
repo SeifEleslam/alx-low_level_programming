@@ -5,7 +5,7 @@
  * @head: head
  * Return: new node
  */
-__attribute__((constructor)) void *first_func(void)
+__attribute__((constructor)) void *first_func()
 {
 	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
 }
