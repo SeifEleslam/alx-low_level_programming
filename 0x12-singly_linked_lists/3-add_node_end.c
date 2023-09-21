@@ -16,11 +16,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->next = NULL;
 	new->str = str ? strdup(str) : NULL;
 	new->len = str ? strlen(str) : 0;
- 	if (!(*head))
+	if (!(*head))
 		*head = new;
 	else
 	{
-  		while((*head)->next)
+		while((*head)->next)
 			head = &((*head)->next);
 		(*head)->next = new;
 	}
