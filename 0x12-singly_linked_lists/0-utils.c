@@ -20,7 +20,7 @@ void print_num(size_t num)
  */
 void print_str(char *s, size_t len)
 {
-	int i;
+	size_t i;
 	
 	for (i = 0; i < len; i++)
 		_putchar(s[i]);
