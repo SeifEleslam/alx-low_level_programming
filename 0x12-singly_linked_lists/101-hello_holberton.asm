@@ -1,10 +1,10 @@
 section .data
-    hello db 'Hello, Holberton', 0 ; Null-terminated string with newline character
+    hello db 'Hello, Holberton', 0AH ; Null-terminated string with newline character
 
 section .text
-    global _start
+    global main
 
-_start:
+main:
     ; Write string to stdout
     mov eax, 4
     mov ebx, 1
