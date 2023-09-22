@@ -1,11 +1,11 @@
 section .data
-    format db 'Hello, %s', 0
-    name db 'Holberton', 0
+    format db "Hello, %s\n", 0
+    name db "Holberton", 0
 
 section .text
     extern printf
+    global main
 
-global main
 main:
     sub rsp, 8
     mov rdi, format
