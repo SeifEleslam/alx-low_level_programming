@@ -1,18 +1,20 @@
 section .data
-    hello db 'Hello, Holberton', 0AH ; Null-terminated string with newline character
+    format db 'Hello, %s', 0
+    name db 'Holberton', 0
 
 section .text
-    global main
+    extern printf
 
-main:
-    ; Write string to stdout
-    mov eax, 4
-    mov ebx, 1
-    mov ecx, hello
-    mov edx, 16
-    int 0x80
+global _start
+_start:
+    sub rsp, 8
+    mov rdi, format
+    mov rsi, name
+    xor eax, eax
 
-    ; Exit the program
-    mov eax, 1
-    xor ebx, ebx
-    int 0x80
+    call printf
+
+    add rsp, 8
+    mov eax, 60
+    xor edi, edi
+    syscall
