@@ -1,6 +1,6 @@
 section .data
-    format db "Hello, %s\n", 0
-    name db "Holberton", 0
+    format db "%s", 10, 0
+    name db "Hello, Holberton", 0
 
 section .text
     extern printf
