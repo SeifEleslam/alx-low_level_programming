@@ -1,11 +1,11 @@
 section .data
-message: db "Hello, Holberton\n", 10
+message: db "Hello, Holberton\n", 0
 
 section .text
 global _start
 
 _start:
-mov rax, message
-syscall
-mov rax, 60
-syscall
+	mov rax, message
+	syscall
+	mov rax, 60
+	syscall
