@@ -1,6 +1,9 @@
-extern printf
+section .data
+   msg: db "Hello, Holberton", 0
+   fmt: db "%s", 10, 0
 
 section .text
+   extern printf
    global main
 
 main:
@@ -16,6 +19,3 @@ main:
    mov rax,0
    ret
 
-section .data
-   msg: db "Hello, Holberton", 0
-   fmt: db "%s", 10, 0
