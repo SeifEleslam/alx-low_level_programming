@@ -5,8 +5,8 @@ section .data
 section .text
     extern printf
 
-global _start
-_start:
+global main
+main:
     sub rsp, 8
     mov rdi, format
     mov rsi, name
