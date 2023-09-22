@@ -1,11 +1,18 @@
 section .data
-message: db "Hello, Holberton\n", 0
+    hello db 'Hello, Holberton', 0Ah ; Null-terminated string with newline character
 
 section .text
-global _start
+    global _start
 
 _start:
-	mov rdi, message
-	call printf
-	mov rax, 60
-	syscall
+    ; Write string to stdout
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, hello
+    mov edx, 16
+    int 0x80
+
+    ; Exit the program
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
