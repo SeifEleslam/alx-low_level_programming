@@ -5,7 +5,7 @@ section .text
 global _start
 
 _start:
-	mov rax, message
-	syscall
+	mov rdi, message
+	call printf
 	mov rax, 60
 	syscall
