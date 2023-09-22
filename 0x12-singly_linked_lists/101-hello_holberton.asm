@@ -7,14 +7,14 @@ section .text
     global main
 
 main:
-    sub rsp, 8
-    mov rdi, format
-    mov rsi, name
-    xor eax, eax
+   push rbp
 
-    call printf
+   mov rdi,fmt
+   mov rsi,msg
+   call printf
 
-    add rsp, 8
-    mov eax, 60
-    xor edi, edi
-    syscall
+   pop rbp
+
+   mov rax,0
+   ret
+
