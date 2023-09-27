@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * find_listint_loop - find a loop
+ * find_listint_loop1 - find a loop
  * @head: head
  * Return: node loop
  */
