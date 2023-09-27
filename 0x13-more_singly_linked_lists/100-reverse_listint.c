@@ -9,7 +9,7 @@ listint_t *reverse_listint(listint_t **head)
 	listint_t *curr, *parent, *next;
 
 	if (!head || !(*head))
-	return (NULL);
+		return (NULL);
 	parent = *head;
 	curr = parent->next;
 	parent->next = NULL;
@@ -21,5 +21,5 @@ listint_t *reverse_listint(listint_t **head)
 		curr = next;
 	}
 	*head = parent;
-	return parent;
+	return (parent);
 }
