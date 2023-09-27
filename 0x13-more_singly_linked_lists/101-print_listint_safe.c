@@ -42,7 +42,7 @@ size_t print_listint_safe(const listint_t *head)
 			loop++;
 		if (loop > 1)
 		{
-			printf("-> [%p] %d", (void *)curr, curr->n);
+			printf("-> [%p] %d\n", (void *)curr, curr->n);
 			break;
 		}
 		printf("[%p] %d\n", (void *)curr, curr->n);
