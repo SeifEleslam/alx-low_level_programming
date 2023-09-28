@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * find_listint_loop1 - find a loop
+ * find_listint_loop2 - find a loop
  * @head: head
  * Return: node loop
  */
-listint_t *find_listint_loop1(listint_t *head)
+listint_t *find_listint_loop2(listint_t *head)
 {
 	listint_t *curr, *point;
 
@@ -53,7 +53,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *loop_node;
 
 	loop = 0;
-	loop_node = find_listint_loop1(*h);
+	loop_node = find_listint_loop2(*h);
 	len = free_listint_rec(*h, loop_node, loop);
 	*h = NULL;
 	return (len);
