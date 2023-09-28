@@ -6,7 +6,8 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum, i;
+	unsigned int sum;
+	int i;
 
 	if (!b)
 		return (0);
