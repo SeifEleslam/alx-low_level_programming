@@ -1,5 +1,5 @@
 /**
- * set_bit - des
+ * clear_bit - des
  * @n: int
  * @index: int
  * Return: int
