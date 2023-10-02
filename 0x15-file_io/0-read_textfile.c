@@ -4,7 +4,7 @@
  * @letters: n of letters
  * Return: n of read and printed
  */
-size_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int file, writtenLen, readLen;
 	char *buff;
@@ -12,7 +12,7 @@ size_t read_textfile(const char *filename, size_t letters)
 	if (!filename || letters == 0)
 		return (0);
 	buff = malloc(sizeof(char) * (letters));
-	if (!buf)
+	if (!buff)
 		return (0);
 	file = open(filename, O_RDONLY);
 	if (file == -1)
