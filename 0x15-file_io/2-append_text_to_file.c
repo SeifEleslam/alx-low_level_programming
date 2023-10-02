@@ -1,6 +1,21 @@
 #include "main.h"
 
 /**
+ * _strlen - return str len
+ * @s: str
+ * Return: len
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0';)
+		i++;
+	return (i);
+}
+
+
+/**
  * append_text_to_file - append to a file
  * @filename: file name
  * @text_content: text
