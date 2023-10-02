@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * read_textfile - prints file
  * @filename: nfile name
