@@ -68,25 +68,25 @@ int main(int ac, char **av)
 {
 	char buff[1024];
 	int lenRead, lenWrite, fileFrom, fileTo, errCode;
-	
+
 	if (ac != 3)
-		return exit_err(STDERR_FILENO, 97,
-			"Usage: cp file_from file_to\n", NULL, -100, -100);
+		return (exit_err(STDERR_FILENO, 97,
+			"Usage: cp file_from file_to\n", NULL, -100, -100));
 	fileFrom = open(av[1], O_RDONLY);
 	if (fileFrom == -1)
-		return ops_err(av[1], -100, -100, 1);
-	fileTo = open(av[2], (O_WRONLY | O_CREAT | O_TRUNC), 0662);
+		return (ops_err(av[1], -100, -100, 1));
+	fileTo = open(av[2], (O_WRONLY | O_CREAT | O_TRUNC), 0664);
 	if (fileTo == -1)
-		return ops_err(av[2], fileFrom, -100, 2);
+		return (ops_err(av[2], fileFrom, -100, 2));
 	
 	for (lenRead = 1024; lenRead == 1024;)
 	{
 		lenRead = read(fileFrom, buff, 1024);
 		if (lenRead == -1)
-			return ops_err(av[1], fileFrom, fileTo, 1);
+			return (ops_err(av[1], fileFrom, fileTo, 1));
 		lenWrite = write(fileTo, buff, lenRead);
 		if (lenWrite == -1 || lenRead != lenWrite)
-			return ops_err(av[2], fileFrom, fileTo, 2);
+			return (ops_err(av[2], fileFrom, fileTo, 2));
 	}
 	errCode = handle_close(fileFrom);
 	errCode += handle_close(fileTo);
