@@ -19,5 +19,5 @@ int append_text_to_file(const char *filename, char *text_content)
 	written = text_content ? write(file, text_content, contentLen) : 0;
 	if (close(file) == -1 || contentLen != written)
 		return (-1);
-	return (1);
+	return (written);
 }
