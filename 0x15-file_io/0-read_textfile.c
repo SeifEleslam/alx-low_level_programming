@@ -9,6 +9,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file, writtenLen, readLen;
 	char *buff;
 
+	if (!filename || letters == 0)
+		return (0);
 	buff = malloc(sizeof(char) * (letters));
 	if (!buf)
 		return (0);
