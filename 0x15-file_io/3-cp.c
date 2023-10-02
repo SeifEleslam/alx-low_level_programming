@@ -3,6 +3,25 @@
 #include <fcntl.h>
 #include <stdio.h>
 
+
+/**
+ * handle_close - return str len
+ * @fileD: int
+ * Return: int
+ */
+int handle_close(int fileD)
+{
+	int fileClose;
+
+	fileClose = close(fileD);
+	if (fileClose == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileD);
+		return (100);
+	}
+	return (0);
+}
+
 /**
  * exit_err - return str len
  * @dest: destination
@@ -21,24 +40,6 @@ int exit_err(int dest, int code, char *err, char *fileName, int fileD1, int file
 	if (fileD2 > -50)
 		handle_close(fileD2);
 	return (code);
-}
-
-/**
- * handle_close - return str len
- * @fileD: int
- * Return: int
- */
-int handle_close(int fileD)
-{
-	int fileClose;
-
-	fileClose = close(fileD);
-	if (fileClose == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileD);
-		return (100);
-	}
-	return (0);
 }
 
 /**
