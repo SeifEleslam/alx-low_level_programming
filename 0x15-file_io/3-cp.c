@@ -44,7 +44,7 @@ int exit_err(int dest, int code, char *err,
 }
 
 /**
- * handle_close - return str len
+ * ops_err - return str len
  * @fileName: int
  * @op: int
  * @fileD1: int
