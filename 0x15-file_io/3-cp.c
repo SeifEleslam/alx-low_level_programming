@@ -32,7 +32,8 @@ int handle_close(int fileD)
  * @fileD2: descriptior2
  * Return: err code
  */
-int exit_err(int dest, int code, char *err, char *fileName, int fileD1, int fileD2)
+int exit_err(int dest, int code, char *err,
+	char *fileName, int fileD1, int fileD2)
 {
 	dprintf(dest, err, fileName ? fileName : "");
 	if (fileD1 > -50)
@@ -52,10 +53,10 @@ int exit_err(int dest, int code, char *err, char *fileName, int fileD1, int file
  */
 int ops_err(char *fileName, int fileD1, int fileD2, int op)
 {
-	return op == 1 ? exit_err(STDERR_FILENO, 98,
+	return (op == 1 ? exit_err(STDERR_FILENO, 98,
 				"Error: Can't read from file %s\n", fileName, fileD1, fileD2)
 			: exit_err(STDERR_FILENO, 99,
-				"Error: Can't write to %s\n", fileName, fileD1, fileD2);
+				"Error: Can't write to %s\n", fileName, fileD1, fileD2));
 }
 
 /**
@@ -78,7 +79,7 @@ int main(int ac, char **av)
 	fileTo = open(av[2], (O_WRONLY | O_CREAT | O_TRUNC), 0664);
 	if (fileTo == -1)
 		return (ops_err(av[2], fileFrom, -100, 2));
-	
+
 	for (lenRead = 1024; lenRead == 1024;)
 	{
 		lenRead = read(fileFrom, buff, 1024);
