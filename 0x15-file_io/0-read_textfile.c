@@ -4,7 +4,7 @@
  * @letters: n of letters
  * Return: n of read and printed
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 	int file, writtenLen, readLen;
 	char *buff;
