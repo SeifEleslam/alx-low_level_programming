@@ -7,9 +7,9 @@
 void print_data(int code)
 {
 	printf("  %-35s", "Data:");
-	code == 1 ? printf("2's complement, little endian\n") 
+	code == 1 ? printf("2's complement, little endian\n")
 		: code == 2 ? printf("2's complement, big endian\n")
-		:printf("<unknown: %02hx>\n", code);
+		: printf("<unknown: %02hx>\n", code);
 }
 
 /**
@@ -22,7 +22,7 @@ void print_type(int code)
 	switch (code)
 	{
 	case 0x0001:
-		printf("REL (Relocatable file)\n"); 
+		printf("REL (Relocatable file)\n");
 		break;
 	case 0x0002:
 		printf("EXEC (Executable file)\n");
@@ -33,7 +33,7 @@ void print_type(int code)
 	case 0x0004:
 		printf("CORE (Core file)\n");
 		break;
-	default: 
+	default:
 		printf("<unknown: %02hx>\n", code); break;
 	}
 }
@@ -102,7 +102,7 @@ void print_osapi(int code)
 		printf("Stratus Technologies OpenVOS");
 		break;
 	default:
-		printf("<unknown: %02hx>\n", code); 
+		printf("<unknown: %02hx>\n", code);
 		break;
 	}
 	printf("\n");
@@ -164,7 +164,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Failed to open file: %s\n", argv[1]);
 		exit(98);
 	}
-	
+
 	bytes_read = read(file, &header, sizeof(header));
 	if (bytes_read == -1 || bytes_read != sizeof(header))
 	{
@@ -175,5 +175,5 @@ int main(int argc, char *argv[])
 	close(file);
 	printf("ELF Header:\n");
 	print_ident(header.e_ident);
-	return 0;
+	return (0);
 }
