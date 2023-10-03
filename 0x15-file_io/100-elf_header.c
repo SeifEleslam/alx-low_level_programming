@@ -88,7 +88,7 @@ void print_osapi(int code)
  * @buffer: head
  * @size: size
  */
-void print_hex(const unsigned char *buffer, size_t size)
+void print_hex(char *buffer, size_t size)
 {
 	size_t i;
 
@@ -142,7 +142,7 @@ void print_ident(char *head)
 	printf("  Magic:   ");
 	print_hex(head, 16);
 	printf("  %-35sELF%u\n", "Class:", head[4] == 1 ? 32 : 64);
-	print_data(ident[5]);
+	print_data(head[5]);
 	printf("  %-35s%u%s", "Version:", head[6],
 		head[6] == 1 ? " (current)\n" : "\n");
 	print_osapi(head[7]);
@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
 {
 	int file;
 	ssize_t bytes_read;
-	char[32] header;
+	char header[32];
 
 	if (argc != 2)
 	{
