@@ -21,11 +21,20 @@ void print_type(int code)
 	printf("  %-35s", "Type:");
 	switch (code)
 	{
-	case 0x0001: printf("REL (Relocatable file)\n"); break;
-	case 0x0002: printf("EXEC (Executable file)\n"); break;
-	case 0x0003: printf("DYN (Shared object file)\n"); break;
-	case 0x0004: printf("CORE (Core file)\n"); break;
-	default: printf("<unknown: %02hx>\n", code); break;
+	case 0x0001:
+		printf("REL (Relocatable file)\n"); 
+		break;
+	case 0x0002:
+		printf("EXEC (Executable file)\n");
+		break;
+	case 0x0003:
+		printf("DYN (Shared object file)\n");
+		break;
+	case 0x0004:
+		printf("CORE (Core file)\n");
+		break;
+	default: 
+		printf("<unknown: %02hx>\n", code); break;
 	}
 }
 
@@ -38,25 +47,63 @@ void print_osapi(int code)
 	printf("  %-35sUNIX - ", "OS/ABI:");
 	switch (code)
 	{
-	case 0x00: printf("System V"); break;
-	case 0x01: printf("HP-UX"); break;
-	case 0x02: printf("NetBSD"); break;
-	case 0x03: printf("Linux"); break;
-	case 0x04: printf("GNU Hurd"); break;
-	case 0x06: printf("Solaris"); break;
-	case 0x07: printf("AIX"); break;
-	case 0x08: printf("IRIX"); break;
-	case 0x09: printf("FreeBSD"); break;
-	case 0x0A: printf("Tru64"); break;
-	case 0x0B: printf("Novell Modesto"); break;
-	case 0x0C: printf("OpenBSD"); break;
-	case 0x0D: printf("OpenVMS"); break;
-	case 0x0E: printf("NonStop Kernel"); break;
-	case 0x0F: printf("AROS"); break;
-	case 0x10: printf("Fenix OS"); break;
-	case 0x11: printf("CloudABI"); break;
-	case 0x12: printf("Stratus Technologies OpenVOS"); break;
-	default: printf("<unknown: %02hx>\n", code); break;
+	case 0x00:
+		printf("System V");
+		break;
+	case 0x01:
+		printf("HP-UX");
+		break;
+	case 0x02:
+		printf("NetBSD");
+		break;
+	case 0x03:
+		printf("Linux");
+		break;
+	case 0x04:
+		printf("GNU Hurd");
+		break;
+	case 0x06:
+		printf("Solaris");
+		break;
+	case 0x07:
+		printf("AIX");
+		break;
+	case 0x08:
+		printf("IRIX");
+		break;
+	case 0x09:
+		printf("FreeBSD");
+		break;
+	case 0x0A:
+		printf("Tru64");
+		break;
+	case 0x0B:
+		printf("Novell Modesto");
+		break;
+	case 0x0C:
+		printf("OpenBSD");
+		break;
+	case 0x0D:
+		printf("OpenVMS");
+		break;
+	case 0x0E:
+		printf("NonStop Kernel");
+		break;
+	case 0x0F:
+		printf("AROS");
+		break;
+	case 0x10:
+		printf("Fenix OS");
+		break;
+	case 0x11:
+		printf("CloudABI");
+		break;
+	case 0x12:
+		printf("Stratus Technologies OpenVOS");
+		break;
+	default:
+		printf("<unknown: %02hx>\n", code); 
+		break;
 	}
 	printf("\n");
 }
