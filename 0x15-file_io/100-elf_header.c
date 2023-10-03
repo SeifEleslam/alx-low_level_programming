@@ -4,6 +4,11 @@
 #include <fcntl.h>
 #include <elf.h>
 
+
+/**
+ * print_data - prints elf data
+ * @code: type code
+ */
 void print_data(int code)
 {
 	printf("  %-35s", "Data:");
