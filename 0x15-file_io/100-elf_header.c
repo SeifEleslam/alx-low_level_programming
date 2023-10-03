@@ -34,7 +34,7 @@ void print_type(int code)
 		printf("CORE (Core file)\n");
 		break;
 	default:
-		printf("<unknown: %02hx>\n", code); break;
+		printf("<unknown: %02hx>\n", code);
 	}
 }
 
@@ -103,7 +103,6 @@ void print_osapi(int code)
 		break;
 	default:
 		printf("<unknown: %02hx>\n", code);
-		break;
 	}
 	printf("\n");
 }
@@ -145,7 +144,7 @@ void print_ident(const unsigned char *ident)
  * main - prints elf header
  * @argc: arg count
  * @argv: arg values
- * Return: 0 on success 
+ * Return: 0 on success
  */
 int main(int argc, char *argv[])
 {
