@@ -151,7 +151,7 @@ void print_ident(Elf64_Ehdr *head)
 	print_osapi(ident[7]);
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
-	printf("  %-35s0x%lx\n", "Entry point address:", head->e_entry)
+	printf("  %-35s0x%lx\n", "Entry point address:", head->e_entry);
 }
 
 /**
