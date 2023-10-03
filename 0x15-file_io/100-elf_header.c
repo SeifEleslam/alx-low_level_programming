@@ -93,7 +93,7 @@ void print_hex(char *buffer, size_t size)
 	size_t i;
 
 	for (i = 0; i < size; i++)
-		printf("%02x ", buffer[i]);
+		printf("%02x%s", buffer[i], i == size - 1 ? "" : " ");
 	printf("\n");
 }
 
