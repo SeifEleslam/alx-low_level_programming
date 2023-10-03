@@ -84,7 +84,7 @@ void print_ident(const unsigned char *ident)
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
 	printf("  %-35s0x%llx\n", "Entry point address:",
-		(unsigned long long int*(uint64_t *)(ident + 24));
+		(unsigned long long int)*(uint64_t *)(ident + 24));
 }
 
 /**
@@ -96,6 +96,7 @@ void print_ident(const unsigned char *ident)
 int main(int argc, char *argv[])
 {
 	int file;
+	ssize_t bytes_read;
 	Elf64_Ehdr header;
 
 	if (argc != 2)
@@ -110,7 +111,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	
-	ssize_t bytes_read = read(file, &header, sizeof(header));
+	bytes_read = read(file, &header, sizeof(header));
 	if (bytes_read == -1 || bytes_read != sizeof(header))
 	{
 		dprintf(STDERR_FILENO, "Failed to read file: %s\n", argv[1]);
