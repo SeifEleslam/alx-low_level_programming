@@ -137,7 +137,7 @@ void print_ident(const unsigned char *ident)
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
 	printf("  %-35s0x%x\n", "Entry point address:",
-		(unsigned int)*(uint64_t *)(ident + 24));
+		*(uint64_t *)(ident + 24));
 }
 
 /**
