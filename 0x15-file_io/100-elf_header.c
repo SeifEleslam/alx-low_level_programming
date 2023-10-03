@@ -4,6 +4,14 @@
 #include <fcntl.h>
 #include <elf.h>
 
+void print_data(int code)
+{
+	printf("  %-35s", "Data:");
+	code == 1 ? printf("2's complement, little endian\n") 
+		: code == 2 ? printf("2's complement, big endian\n")
+		:printf("<unknown: %02hx>\n", code);
+}
+
 /**
  * print_type - prints elf type
  * @code: type code
@@ -13,12 +21,11 @@ void print_type(int code)
 	printf("  %-35s", "Type:");
 	switch (code)
 	{
-	case 0x0000: printf("None\n"); break;
 	case 0x0001: printf("REL (Relocatable file)\n"); break;
 	case 0x0002: printf("EXEC (Executable file)\n"); break;
 	case 0x0003: printf("DYN (Shared object file)\n"); break;
 	case 0x0004: printf("CORE (Core file)\n"); break;
-	default: printf("Unknown\n"); break;
+	default: printf("<unknown: %02hx>\n", code); break;
 	}
 }
 
@@ -49,7 +56,7 @@ void print_osapi(int code)
 	case 0x10: printf("Fenix OS"); break;
 	case 0x11: printf("CloudABI"); break;
 	case 0x12: printf("Stratus Technologies OpenVOS"); break;
-	default: printf("Unknown"); break;
+	default: printf("<unknown: %02hx>\n", code); break;
 	}
 	printf("\n");
 }
@@ -77,14 +84,14 @@ void print_ident(const unsigned char *ident)
 	printf("  Magic:   ");
 	print_hex(ident, 16);
 	printf("  %-35sELF%u\n", "Class:", ident[4] == 1 ? 32 : 64);
-	printf("  %-35s2's complement, %s\n", "Data:",
-		ident[5] == 1 ? "little endian" : "big endian");
-	printf("  %-35s%u (current)\n", "Version:", ident[6]);
+	print_data(ident[5]);
+	printf("  %-35s%u%s", "Version:", ident[6],
+		ident[6] == 1 ? " (current)\n" : "\n");
 	print_osapi(ident[7]);
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
-	printf("  %-35s0x%llx\n", "Entry point address:",
-		(unsigned long long int)*(uint64_t *)(ident + 24));
+	printf("  %-35s0x%x\n", "Entry point address:",
+		(unsigned int)*(uint64_t *)(ident + 24));
 }
 
 /**
