@@ -99,6 +99,41 @@ void print_hex(const unsigned char *buffer, size_t size)
 }
 
 /**
+ * printentry - prints entry
+ * @head: head
+ */
+void printentry(char *head)
+{
+	int i, end;
+
+	printf("  %-35s0x", "Entry point address:");
+	if (head[4] == 2)
+		end = 0x1f;
+	else
+		end = 0x1b;
+	if (head[5] == 1)
+	{
+		i = end;
+		while (head[i] == 0 && i > 0x18)
+			i--;
+		printf("%x", head[i--]);
+		while (i >= 0x18)
+			printf("%02x", (unsigned char) head[i--]);
+		printf("\n");
+	}
+	else
+	{
+		i = 0x18;
+		while (head[i] == 0)
+			i++;
+		printf("%x", head[i++]);
+		while (i <= end)
+			printf("%02x", (unsigned char) head[i++]);
+		printf("\n");
+	}
+}
+
+/**
  * print_ident - prints osAPI type
  * @ident: head
  */
@@ -113,8 +148,7 @@ void print_ident(const unsigned char *ident)
 	print_osapi(ident[7]);
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
-	printf("  %-35s0x%lx\n", "Entry point address:",
-		*(uint64_t *)(ident + 24));
+	printentry(ident);	
 }
 
 /**
