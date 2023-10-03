@@ -44,66 +44,43 @@ void print_type(int code)
  */
 void print_osapi(int code)
 {
-	printf("  %-35sUNIX - ", "OS/ABI:");
-	switch (code)
-	{
-	case 0x00:
-		printf("System V");
-		break;
-	case 0x01:
-		printf("HP-UX");
-		break;
-	case 0x02:
-		printf("NetBSD");
-		break;
-	case 0x03:
-		printf("Linux");
-		break;
-	case 0x04:
-		printf("GNU Hurd");
-		break;
-	case 0x06:
-		printf("Solaris");
-		break;
-	case 0x07:
-		printf("AIX");
-		break;
-	case 0x08:
-		printf("IRIX");
-		break;
-	case 0x09:
-		printf("FreeBSD");
-		break;
-	case 0x0A:
-		printf("Tru64");
-		break;
-	case 0x0B:
-		printf("Novell Modesto");
-		break;
-	case 0x0C:
-		printf("OpenBSD");
-		break;
-	case 0x0D:
-		printf("OpenVMS");
-		break;
-	case 0x0E:
-		printf("NonStop Kernel");
-		break;
-	case 0x0F:
-		printf("AROS");
-		break;
-	case 0x10:
-		printf("Fenix OS");
-		break;
-	case 0x11:
-		printf("CloudABI");
-		break;
-	case 0x12:
-		printf("Stratus Technologies OpenVOS");
-		break;
-	default:
-		printf("<unknown: %02hx>\n", code);
-	}
+	printf("  %-35s", "OS/ABI:");
+	if (code == 0)
+		printf("UNIX - System V\n");
+	else if (code == 1)
+		printf("UNIX - HP-UX\n");
+	else if (code == 2)
+		printf("UNIX - NetBSD\n");
+	else if (code == 3)
+		printf("UNIX - Linux\n");
+	else if (code == 4)
+		printf("UNIX - GNU Hurd\n");
+	else if (code == 6)
+		printf("UNIX - Solaris\n");
+	else if (code == 7)
+		printf("UNIX - AIX\n");
+	else if (code == 8)
+		printf("UNIX - IRIX\n");
+	else if (code == 9)
+		printf("UNIX - FreeBSD\n");
+	else if (code == 10)
+		printf("UNIX - Tru64\n");
+	else if (code == 11)
+		printf("UNIX - Novell Modesto\n");
+	else if (code == 12)
+		printf("UNIX - OpenBSD\n");
+	else if (code == 13)
+		printf("UNIX - Open VMS\n");
+	else if (code == 14)
+		printf("UNIX - NonStop Kernel\n");
+	else if (code == 15)
+		printf("UNIX - AROS\n");
+	else if (code == 16)
+		printf("UNIX - Fenix OS\n");
+	else if (code == 17)
+		printf("UNIX - CloudABI\n");
+	else
+		printf("<unknown: %02x>\n", code);
 	printf("\n");
 }
 
