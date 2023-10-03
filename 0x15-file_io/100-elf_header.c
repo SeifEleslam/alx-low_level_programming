@@ -61,7 +61,9 @@ void print_osapi(int code)
  */
 void print_hex(const unsigned char *buffer, size_t size)
 {
-	for (size_t i = 0; i < size; i++)
+	size_t i;
+
+	for (i = 0; i < size; i++)
 		printf("%02x ", buffer[i]);
 	printf("\n");
 }
@@ -82,7 +84,7 @@ void print_ident(const unsigned char *ident)
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
 	printf("  %-35s0x%llx\n", "Entry point address:",
-		(long long unsigned int)*(uint64_t *)(ident + 24));
+		(unsigned long long int*(uint64_t *)(ident + 24));
 }
 
 /**
@@ -101,14 +103,12 @@ int main(int argc, char *argv[])
 		printf("Usage: %s <elf_file>\n", argv[0]);
 		exit(98);
 	}
-	// Open the ELF file.
 	file = open(argv[1], O_RDONLY);
 	if (file == -1)
 	{
 		dprintf(STDERR_FILENO, "Failed to open file: %s\n", argv[1]);
 		exit(98);
 	}
-	const char *elfFile = argv[1];
 	
 	ssize_t bytes_read = read(file, &header, sizeof(header));
 	if (bytes_read == -1 || bytes_read != sizeof(header))
