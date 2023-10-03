@@ -137,8 +137,11 @@ void printentry(char *head)
  * print_ident - prints osAPI type
  * @ident: head
  */
-void print_ident(const unsigned char *ident)
+void print_ident(Elf64_Ehdr *head)
 {
+	unsigned char *ident;
+
+	ident = head->e_ident;
 	printf("  Magic:   ");
 	print_hex(ident, 16);
 	printf("  %-35sELF%u\n", "Class:", ident[4] == 1 ? 32 : 64);
@@ -148,7 +151,7 @@ void print_ident(const unsigned char *ident)
 	print_osapi(ident[7]);
 	printf("  %-35s%u\n", "ABI Version:", ident[8]);
 	print_type(*(uint16_t *)(ident + 16));
-	printentry(ident);	
+	printf("  %-35s0x%lx\n", "Entry point address:", head->e_entry)
 }
 
 /**
@@ -184,6 +187,6 @@ int main(int argc, char *argv[])
 	}
 	close(file);
 	printf("ELF Header:\n");
-	print_ident(header.e_ident);
+	print_ident(&header);
 	return (0);
 }
