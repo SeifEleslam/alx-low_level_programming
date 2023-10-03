@@ -81,7 +81,6 @@ void print_osapi(int code)
 		printf("UNIX - CloudABI\n");
 	else
 		printf("<unknown: %02x>\n", code);
-	printf("\n");
 }
 
 /**
