@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Usage: %s <elf_file>\n", argv[0]);
+		dprintf(2, "Usage: %s <elf_file>\n", argv[0]);
 		exit(98);
 	}
 	file = open(argv[1], O_RDONLY);
@@ -188,6 +188,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	close(file);
+	if (header[0] != 0x7f || header[1] != 'E' || header[2] != 'L' || header[3] != 'F')
+	{
+		dprintf(2, "Usage: %s <elf_file>\n", argv[0]);
+		exit(98);
+	}
 	printf("ELF Header:\n");
 	print_ident(header);
 	return (0);
