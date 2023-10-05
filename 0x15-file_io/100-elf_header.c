@@ -153,8 +153,7 @@ void print_ident(char *head)
 	print_osapi(head[7]);
 	printf("  %-35s%u\n", "ABI Version:", head[8]);
 	print_type(head[5] == 1 ? head[16] : head[17]);
-	/*printentry(head);*/
-	printf("  %-35s0x%lu\n", "Entry point address:", (unsigned long)(head + 24));
+	printentry(head);
 }
 
 /**
@@ -189,7 +188,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	close(file);
-	if (header[0] != 0x7f || header[1] != 'E' || header[2] != 'L' || header[3] != 'F')
+	if (header[0] != 0x7f || header[1] != 'E' ||
+		header[2] != 'L' || header[3] != 'F')
 	{
 		dprintf(2, "Usage: %s <elf_file>\n", argv[0]);
 		exit(98);
