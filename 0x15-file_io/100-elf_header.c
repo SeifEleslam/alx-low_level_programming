@@ -149,7 +149,7 @@ void print_ident(char *head)
 	printf("  %-35sELF%u\n", "Class:", head[4] == 1 ? 32 : 64);
 	print_data(head[5]);
 	printf("  %-35s%u%s", "Version:", head[6],
-		head[6] <= EV_CURRENT ? " (current)\n" : "\n");
+		head[6] >= EV_CURRENT ? " (current)\n" : "\n");
 	print_osapi(head[7]);
 	printf("  %-35s%u\n", "ABI Version:", head[8]);
 	print_type(head[5] == 1 ? head[16] : head[17]);
