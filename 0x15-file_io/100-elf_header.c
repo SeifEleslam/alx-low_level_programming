@@ -103,45 +103,11 @@ void print_hex(char *buffer, size_t size)
 }
 
 /**
- * printentry - prints entry
- * @head: head
- */
-void printentry(char *head)
-{
-	int i, end;
-
-	printf("  %-35s0x", "Entry point address:");
-	if (head[4] == 2)
-		end = 0x1f;
-	else
-		end = 0x1b;
-	if (head[5] == 1)
-	{
-		i = end;
-		while (head[i] == 0 && i > 0x18)
-			i--;
-		printf("%x", head[i--]);
-		while (i >= 0x18)
-			printf("%02x", (unsigned char) head[i--]);
-		printf("\n");
-	}
-	else
-	{
-		i = 0x18;
-		while (head[i] == 0)
-			i++;
-		printf("%x", head[i++]);
-		while (i <= end)
-			printf("%02x", (unsigned char) head[i++]);
-		printf("\n");
-	}
-}
-
-/**
  * print_entry - prints entry
  * @value: value
  */
-void print_entry(uint32_t value) {
+void print_entry(uint32_t value)
+{
 	if (value == 0)
 		return;
 	print_entry(value / 16);
@@ -164,9 +130,8 @@ void print_ident(char *head)
 	print_osapi(head[7]);
 	printf("  %-35s%u\n", "ABI Version:", head[8]);
 	print_type(head[5] == 1 ? head[16] : head[17]);
-	/*printentry(head);*/
 	printf("  %-35s0x", "Entry point address:");
-	print_entry(*(uint32_t*)(head + 24));
+	print_entry(*(uint32_t *)(head + 24));
 	printf("\n");
 }
 
