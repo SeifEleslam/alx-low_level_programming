@@ -141,12 +141,8 @@ void print_entry(uint32_t value) {
   if (value == 0) {
     return;
   }
-
-  print_entry(value / 16);
-
-  if (value % 16 != 0) {
-    printf("%x", value % 16);
-  }
+	print_entry(value / 16);
+	printf("%x", value % 16);
 }
 
 /**
