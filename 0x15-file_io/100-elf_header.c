@@ -137,6 +137,18 @@ void printentry(char *head)
 	}
 }
 
+void print_entry(uint32_t value) {
+  if (value == 0) {
+    return;
+  }
+
+  print_entry(value / 16);
+
+  if (value % 16 != 0) {
+    printf("%x", value % 16);
+  }
+}
+
 /**
  * print_ident - prints osAPI type
  * @head: head
@@ -154,7 +166,9 @@ void print_ident(char *head)
 	printf("  %-35s%u\n", "ABI Version:", head[8]);
 	print_type(head[5] == 1 ? head[16] : head[17]);
 	/*printentry(head);*/
-	printf("  %-35s0x%p\n", "Entry point address:", (void*)*(uint32_t*)(head + 24));
+	printf("  %-35s", "Entry point address:");
+	print_entry(*(uint32_t*)(head + 24));
+	printf("\n");
 }
 
 /**
