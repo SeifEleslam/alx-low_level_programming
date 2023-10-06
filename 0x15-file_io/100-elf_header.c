@@ -137,10 +137,13 @@ void printentry(char *head)
 	}
 }
 
+/**
+ * print_entry - prints entry
+ * @value: value
+ */
 void print_entry(uint32_t value) {
-  if (value == 0) {
-    return;
-  }
+	if (value == 0)
+		return;
 	print_entry(value / 16);
 	printf("%x", value % 16);
 }
