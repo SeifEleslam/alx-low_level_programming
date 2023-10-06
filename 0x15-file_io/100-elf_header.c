@@ -154,7 +154,7 @@ void print_ident(char *head)
 	printf("  %-35s%u\n", "ABI Version:", head[8]);
 	print_type(head[5] == 1 ? head[16] : head[17]);
 	/*printentry(head);*/
-	printf("  %-35s0x%p\n", "Entry point address:", *(uint32_t*)(head + 24));
+	printf("  %-35s0x%p\n", "Entry point address:", (void*)*(uint32_t*)(head + 24));
 }
 
 /**
