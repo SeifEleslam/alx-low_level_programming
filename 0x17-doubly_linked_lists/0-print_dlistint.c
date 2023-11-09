@@ -1,5 +1,6 @@
 #include "lists.h"
-/*
+
+/**
  * print_dlistint - print d linked list
  * @h: head of the list
  * Return: len of the list
