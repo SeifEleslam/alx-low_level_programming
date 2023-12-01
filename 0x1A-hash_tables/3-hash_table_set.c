@@ -57,7 +57,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (curr && strcmp(curr->key, key) != 0)
 			curr = curr->next;
 		if (curr)
-			node->next = curr->next, free_hash_table_node(curr);
+			curr->value = node->value, free_hash_table_node(node);
 		else
 			node->next = ht->array[idx], ht->array[idx] = node;
 	}
