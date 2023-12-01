@@ -23,7 +23,7 @@ hash_node_t *get_next_node(hash_table_t *ht, unsigned long int idx)
 {
 	unsigned long int i;
 
-	for (i = idx + 1; i >= ht->size || ht->array[i];)
+	for (i = idx + 1; i < ht->size && !ht->array[i];)
 		i++;
 	if (i < ht->size)
 		return (ht->array[i]);
