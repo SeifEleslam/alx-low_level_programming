@@ -39,7 +39,7 @@ hash_node_t *get_next_node(hash_table_t *ht, unsigned long int idx)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx, i;
+	unsigned long int idx;
 	hash_node_t *node, *curr;
 
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
@@ -60,7 +60,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			node->next = curr->next, free_hash_table_node(curr);
 		else
 			node->next = ht->array[idx], ht->array[idx] = node;
-		}
+	}
 	else
 		ht->array[idx] = node;
 	return (1);
