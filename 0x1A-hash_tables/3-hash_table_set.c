@@ -43,6 +43,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			curr = curr->next;
 		if (curr)
 			val = strdup((char *)value),
+			free(curr->value),
 			curr->value = val,
 			free_hash_table_node(node);
 		else

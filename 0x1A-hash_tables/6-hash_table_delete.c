@@ -4,11 +4,13 @@
  * hash_table_delete - searc
  * @ht: The size of the array
  */
-void hash_table_delete(const hash_table_t *ht)
+void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
 	hash_node_t *curr, *tmp;
 
+	if (!ht)
+		return;
 	for (i = 0; i < ht->size; i++)
 	{
 		curr = ht->array[i];
