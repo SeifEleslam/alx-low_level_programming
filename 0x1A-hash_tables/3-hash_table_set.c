@@ -50,6 +50,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	node->key = strdup((char *)key);
 	node->value = strdup((char *)value);
+	node->next = NULL;
+
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx])
 	{
@@ -57,14 +59,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free_hash_table_node(ht->array[idx]);
 			ht->array[idx] = node;
-			node->next = get_next_node(ht, idx);
 		}
 		else
 		{
 			for (i = 0; ht->array[i] && strcmp(ht->array[i]->key, key) != 0;)
 				i++;
 			ht->array[i] = node;
-			node->next = get_next_node(ht, i);
 		}
 	}
 	else
