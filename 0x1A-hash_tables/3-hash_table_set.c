@@ -13,22 +13,6 @@ void free_hash_table_node(hash_node_t *node)
 		free(node);
 	}
 }
-/**
- * get_next_node - free node in hash table
- * @ht: the node to free
- * @idx: the node to free
- * Return: next node
- */
-hash_node_t *get_next_node(hash_table_t *ht, unsigned long int idx)
-{
-	unsigned long int i;
-
-	for (i = idx + 1; i < ht->size && !ht->array[i];)
-		i++;
-	if (i < ht->size)
-		return (ht->array[i]);
-	return (NULL);
-}
 
 /**
  * hash_table_set - searc
