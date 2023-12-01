@@ -41,6 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
 	hash_node_t *node, *curr;
+	char *val;
 
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
@@ -57,7 +58,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		while (curr && strcmp(curr->key, key) != 0)
 			curr = curr->next;
 		if (curr)
-			curr->value = node->value, free_hash_table_node(node);
+			val = strdup((char *)value),
+			curr->value = node->value,
+			free_hash_table_node(node);
 		else
 			node->next = ht->array[idx], ht->array[idx] = node;
 	}
