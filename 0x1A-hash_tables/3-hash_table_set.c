@@ -42,13 +42,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx, i;
 	hash_node_t *node;
 
-	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
-		return (0);
 	node = malloc(sizeof(*node));
 	if (!node)
 		return (0);
-	node->key = strdup((char *)key);
-	node->value = strdup((char *)value);
+	node->key = malloc(sizeof(char) * (strlen(key) + 1));
+	if (!node->key)
+		return (0);
+	node->value = malloc(sizeof(char) * (strlen(value) + 1));
+	if (!node->value)
+		return (0);
+	strcpy(node->key, key);
+	strcpy(node->value, value);
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx])
 	{
