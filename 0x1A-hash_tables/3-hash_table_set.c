@@ -61,7 +61,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		else
 		{
-			for (i = 0; ht->array[i];)
+			for (i = 0; ht->array[i] && strcmp(ht->array[i]->key, key) != 0;)
 				i++;
 			ht->array[i] = node;
 			node->next = get_next_node(ht, i);
