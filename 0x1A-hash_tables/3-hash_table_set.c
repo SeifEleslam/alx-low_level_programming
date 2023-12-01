@@ -59,7 +59,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			curr = curr->next;
 		if (curr)
 			val = strdup((char *)value),
-			curr->value = node->value,
+			curr->value = val,
 			free_hash_table_node(node);
 		else
 			node->next = ht->array[idx], ht->array[idx] = node;
