@@ -1,9 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * hash_djb2 - searc
- * @str: The size of the array
- * Return: Ref to hashedstr
+ * key_index - searc
+ * @key: The size of the array
+ * @size: The size of the array
+ * Return: index of hashedstr
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
