@@ -3,7 +3,6 @@
 /**
  * hash_table_print - searc
  * @ht: The size of the array
- * Return: vlaue of hashedstr
  */
 void hash_table_print(const hash_table_t *ht)
 {
