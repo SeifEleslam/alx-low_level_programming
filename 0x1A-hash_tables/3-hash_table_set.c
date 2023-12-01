@@ -45,14 +45,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(*node));
 	if (!node)
 		return (0);
-	node->key = malloc(sizeof(char) * (strlen(key) + 1));
-	if (!node->key)
-		return (0);
-	node->value = malloc(sizeof(char) * (strlen(value) + 1));
-	if (!node->value)
-		return (0);
-	strcpy(node->key, key);
-	strcpy(node->value, value);
+	node->key = strdup((char *)key);
+	node->value = strdup((char *)value);
+	node->next = NULL;
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx])
 	{
@@ -60,14 +55,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free_hash_table_node(ht->array[idx]);
 			ht->array[idx] = node;
-			node->next = get_next_node(ht, idx);
 		}
 		else
 		{
-			for (i = 0; ht->array[i];)
+			for (i = 0; ht->array[i] && strcmp(ht->array[i]->key, key) != 0;)
 				i++;
+			if (ht->array[i])
+				free_hash_table_node(ht->array[i]);
 			ht->array[i] = node;
-			node->next = get_next_node(ht, i);
 		}
 	}
 	else
@@ -75,5 +70,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[idx] = node;
 		node->next = get_next_node(ht, idx);
 	}
+	printf("%s:%s -> %s;\n", node->key, node->value, node->next ? node->next->key : "NULL");
 	return (1);
 }
