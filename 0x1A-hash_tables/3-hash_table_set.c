@@ -70,7 +70,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		ht->array[idx] = node;
-		node->next = get_next_node(ht, idx);
 	}
 	return (1);
 }
