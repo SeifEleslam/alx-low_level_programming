@@ -40,7 +40,7 @@ hash_node_t *get_next_node(hash_table_t *ht, unsigned long int idx)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx, i;
-	hash_node_t *node;
+	hash_node_t *node, *curr;
 
 	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
@@ -53,26 +53,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx])
 	{
-		if (strcmp(ht->array[idx]->key, key) == 0)
-		{
-			node->next = ht->array[idx]->next;
-			free_hash_table_node(ht->array[idx]);
-			ht->array[idx] = node;
-		}
+		curr = ht->array[idx];
+		while (curr && strcmp(curr->key, key) != 0)
+			curr = curr->next;
+		if (curr)
+			node->next = curr->next, free_hash_table_node(curr);
 		else
-		{
-			for (i = 0; ht->array[i] && strcmp(ht->array[i]->key, key) != 0;)
-				i++;
-			if (ht->array[i])
-			{
-				node->next = ht->array[i]->next;
-				free_hash_table_node(ht->array[i]);
-			}
-			else
-				node->next = ht->array[idx];
-			ht->array[i] = node;
+			node->next = ht->array[idx], ht->array[idx] = node;
 		}
-	}
 	else
 		ht->array[idx] = node;
 	return (1);
