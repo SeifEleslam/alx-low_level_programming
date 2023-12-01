@@ -13,6 +13,22 @@ void free_hash_table_node(hash_node_t *node)
 		free(node);
 	}
 }
+/**
+ * get_next_node - free node in hash table
+ * @ht: the node to free
+ * @idx: the node to free
+ * Return: next node
+ */
+hash_node_t *get_next_node(hash_table_t *ht, unsigned long int idx)
+{
+	unsigned long int i;
+
+	for (i = idx + 1; i >= ht->size || ht->array[i];)
+		i++;
+	if (i < ht->size)
+		return (ht->array[i]);
+	return (NULL);
+}
 
 /**
  * hash_table_set - searc
@@ -44,20 +60,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free_hash_table_node(ht->array[idx]);
 			ht->array[idx] = node;
-			node->next = ht->array[idx + 1];
+			node->next = get_next_node(ht, idx);
 		}
 		else
 		{
 			for (i = 0; ht->array[i];)
 				i++;
 			ht->array[i] = node;
-			node->next = ht->array[i + 1];
+			node->next = get_next_node(ht, i);
 		}
 	}
 	else
 	{
 		ht->array[idx] = node;
-		node->next = ht->array[idx + 1];
+		node->next = get_next_node(ht, idx);
 	}
 	return (1);
 }
