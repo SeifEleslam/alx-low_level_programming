@@ -63,13 +63,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			for (i = 0; ht->array[i] && strcmp(ht->array[i]->key, key) != 0;)
 				i++;
+			if (ht->array[i])
+			{
+				node->next = ht->array[i]->next;
+				free_hash_table_node(ht->array[i]);
+			}
+			else
+				node->next = ht->array[idx];
 			ht->array[i] = node;
-			node->next = ht->array[idx];
 		}
 	}
 	else
-	{
 		ht->array[idx] = node;
-	}
 	return (1);
 }
