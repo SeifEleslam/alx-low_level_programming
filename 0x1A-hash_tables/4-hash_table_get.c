@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - searc
+ * hash_table_get - searc
  * @ht: The size of the array
  * @key: The size of the array
  * Return: vlaue of hashedstr
