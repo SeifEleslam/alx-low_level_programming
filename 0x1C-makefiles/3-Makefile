@@ -1,0 +1,19 @@
+# VARS
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM = rm -f 
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+clean:
+	$(RM) *~ school
+
+oclean:
+	$(RM) main.o school.o
+
+fclean: | clean oclean
+
+re: oclean all
