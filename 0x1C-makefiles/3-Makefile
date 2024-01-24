@@ -12,8 +12,8 @@ clean:
 	$(RM) *~ school
 
 oclean:
-	$(RM) main.o school.o
+	$(RM) $(OBJ)
 
 fclean: | clean oclean
 
-re: oclean all
+re: | oclean all
