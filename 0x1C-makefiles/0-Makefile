@@ -1,5 +1,5 @@
 # makefile
-all:school
+all: school
 
-school:
-    gcc main.c school.c -o school
+school: main.c school.c
+	gcc main.c school.c -o school
