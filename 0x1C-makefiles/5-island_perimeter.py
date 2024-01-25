@@ -5,7 +5,7 @@
 def getPerimeter(grid, x, y, done=dict()):
     """Get num of neighbors"""
     if y >= len(grid) or y < 0 or x >= len(grid[y]) or x < 0:
-        return (0, 0)
+        return (0, 1)
     if f'{x},{y}' in done:
         return (0, 1)
     if grid[y][x] == 1:
@@ -33,9 +33,11 @@ def island_perimeter(grid):
 
 grid = [
     [0, 1, 0, 0, 0, 0],
-    [0, 1, 1, 0, 0, 0],
-    [0, 1, 1, 1, 0, 0],
     [0, 1, 0, 0, 0, 0],
-    [0, 1, 1, 0, 0, 0],
+    [0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0],
+
+    # [0, 1, 0, 0, 0, 0],
+    # [0, 1, 1, 0, 0, 0],
 ]
 print(island_perimeter(grid))
