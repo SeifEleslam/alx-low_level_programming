@@ -5,7 +5,7 @@
 def getPerimeter(grid, x, y, done=dict()):
     """Get num of neighbors"""
     if y >= len(grid) or y < 0 or x >= len(grid[y]) or x < 0:
-        return (0, 1)
+        return (0, 0)
     if f'{x},{y}' in done:
         return (0, 1)
     if grid[y][x] == 1:
