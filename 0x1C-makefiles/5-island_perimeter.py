@@ -14,7 +14,8 @@ def getPerimeter(grid, x, y, done=dict()):
         n2 = getPerimeter(grid, x+1, y)
         n3 = getPerimeter(grid, x-1, y)
         n4 = getPerimeter(grid, x, y-1)
-        return (4 + n1[0] + n2[0] + n3[0] + n4[0] - n1[1] - n2[1] - n3[1] - n4[1], 1)
+        return (4 + n1[0] + n2[0] + n3[0] + n4[0]
+                - n1[1] - n2[1] - n3[1] - n4[1], 1)
 
     return (0, 0)
 
