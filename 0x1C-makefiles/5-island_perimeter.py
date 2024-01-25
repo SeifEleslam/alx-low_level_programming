@@ -10,7 +10,6 @@ def getPerimeter(grid, x, y, done=dict()):
         return (0, 1)
     if grid[y][x] == 1:
         done['%d,%d' % (x, y)] = True
-        sum = 0
         n1 = getPerimeter(grid, x, y+1)
         n2 = getPerimeter(grid, x+1, y)
         n3 = getPerimeter(grid, x-1, y)
@@ -32,6 +31,7 @@ def island_perimeter(grid):
 
 
 grid = [
+    [0, 0, 0, 0, 0, 0],
     [0, 1, 0, 0, 0, 0],
     [0, 1, 0, 0, 0, 0],
     [0, 1, 1, 1, 0, 0],
