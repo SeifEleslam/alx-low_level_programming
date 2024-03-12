@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Entry point
+ * jump_search - Jump to it
  * @array: the array we search in
  * @value:  the value we are searching for
  * @size: the size of array
