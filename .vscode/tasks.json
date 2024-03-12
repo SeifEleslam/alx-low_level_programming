@@ -13,7 +13,8 @@
         "-std=gnu89",
         "*.c",
         "-o",
-        "${fileDirname}/main"
+        "${fileDirname}/main",
+        "-lm"
       ],
       "options": {
         "cwd": "${fileDirname}"
