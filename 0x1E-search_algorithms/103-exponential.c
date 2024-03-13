@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_arr - printing array
+ * print_arr_2 - printing array
  * @arr: pointer to arr
  * @size: size of arr
  *
@@ -16,7 +16,7 @@ void print_arr_2(int *arr, size_t size)
 }
 
 /**
- * binary_search - Entry point
+ * binary_search_ref - Entry point
  * @array: the array we search in
  * @value:  the value we are searching for
  * @size: the size of array
@@ -56,7 +56,7 @@ int exponential_search(int *array, size_t size, int value)
 
 	if (size <= 0 || array == NULL)
 		return (-1);
-	for (i = 0, end = 1; end < size; i++, end = pow(2, i))
+	for (i = 0, end = 1; end < size; i++, end = (size_t)1 << i)
 	{
 		if (array[end] >= value)
 			break;
