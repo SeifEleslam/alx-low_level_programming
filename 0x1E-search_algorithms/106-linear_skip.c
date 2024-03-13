@@ -22,7 +22,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		{
 			while (curr->next)
 				curr = curr->next;
-			printf("Value checked at index [%lu] = [%i]\n", curr->index, curr->n);
 			break;
 		}
 	}
