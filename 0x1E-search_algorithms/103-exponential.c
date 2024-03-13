@@ -44,7 +44,7 @@ int binary_search_ref(int *array, size_t size, int value, size_t ref)
 }
 
 /**
- * interpolation_search - Jump to it
+ * exponential_search - Jump to it
  * @array: the array we search in
  * @value:  the value we are searching for
  * @size: the size of array
