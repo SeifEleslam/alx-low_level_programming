@@ -27,8 +27,11 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		}
 	}
 	if (!list->express)
+	{
 		for (curr = start; curr->next;)
 			curr = curr->next;
+		printf("Value checked at index [%lu] = [%i]\n", curr->index, curr->n);
+	}
 	printf("Value found between indexes [%lu] and [%lu]\n",
 		   start->index, curr->index);
 	for (; start != curr; start = start->next)
