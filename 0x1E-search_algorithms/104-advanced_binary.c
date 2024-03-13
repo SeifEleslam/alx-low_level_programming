@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_arr - printing array
+ * print_arr_3 - printing array
  * @arr: pointer to arr
  * @size: size of arr
  *
